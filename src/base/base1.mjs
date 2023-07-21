@@ -174,3 +174,32 @@ export function isPalindrome(word) {
 
 	return comparableWord === comparableWord.split("").reverse().join("");
 }
+
+/**
+ * find the largest number in an array of numbers
+ *
+ * @param {number[]} numbers - the array of numbers
+ *
+ * @returns {number|null} - returns the largest number or null for an empty array
+ *
+ * @throws {Error} if the input is not an array
+ */
+export function findLargestElement(numbers) {
+	if (!Array.isArray(numbers)) {
+		throw new Error("Invalid input!!");
+	}
+
+	if (numbers.length === 0) {
+		return null;
+	}
+
+	let largestNumber = numbers[0];
+
+	for (let i = 0; i < numbers.length; i++) {
+		if (numbers[i] > largestNumber) {
+			largestNumber = numbers[i];
+		}
+	}
+
+	return largestNumber;
+}
