@@ -1,3 +1,3 @@
-import { recursiveFactorial, iterativeFactorial } from "./base/base1.mjs";
+import { reverseString } from "./base/base1.mjs";
 
-console.log(`${recursiveFactorial(5)} and ${iterativeFactorial(5)}`);
+console.log(`hash reversed is: ${reverseString("hash")}`);

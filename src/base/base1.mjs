@@ -124,3 +124,21 @@ export function evenOrOdd(num) {
 		return "odd";
 	}
 }
+
+/**
+ *
+ */
+export function reverseString(word) {
+	if (typeof word !== "string") {
+		throw new Error("Invalid input!!");
+	}
+
+	// split the string into an array of characters
+	let arrayOfCharacters = word.split("");
+
+	// reverse the array of characters
+	let reverse = arrayOfCharacters.reverse();
+
+	// join the reversed array and return it
+	return reverse.join("");
+}
