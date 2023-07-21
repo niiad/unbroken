@@ -126,7 +126,13 @@ export function evenOrOdd(num) {
 }
 
 /**
+ * reverses a given string
  *
+ * @param {string} word - the string to reverse
+ *
+ * @returns {string} the reversed string
+ *
+ * @throws {Error} if the input is not a string
  */
 export function reverseString(word) {
 	if (typeof word !== "string") {
