@@ -100,3 +100,27 @@ export function tailRecursiveFactorial(num, accumulator = 1) {
 		return tailRecursiveFactorial(num - 1, num * accumulator);
 	}
 }
+
+/**
+ * checks if a given number is even or odd
+ *
+ * an even number is divisible by 2 with no remainder, while an odd number
+ * has a remainder of 1 when divided by 2
+ *
+ * @param {number} num - the number to check
+ *
+ * @returns {string} returns 'even' if the number is even else 'odd'
+ *
+ * @throws {Error} if the input is not a number
+ */
+export function evenOrOdd(num) {
+	if (typeof num !== "number" || isNaN(number)) {
+		throw new Error("Invalid input!!");
+	}
+
+	if (num % 2 === 0) {
+		return "even";
+	} else {
+		return "odd";
+	}
+}
