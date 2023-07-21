@@ -203,3 +203,41 @@ export function findLargestElement(numbers) {
 
 	return largestNumber;
 }
+
+/**
+ * finds the second largest element in an array of numbers
+ *
+ * @param {number[]} numbers - the array of numbers
+ *
+ * @returns {number|null} - returns the second largest number or null if the array elements are less than 2
+ *
+ * @throws {Error} if the input is not an array
+ */
+export function findSecondLargestElement(numbers) {
+	if (!Array.isArray(numbers)) {
+		throw new Error("Invalid input!!");
+	}
+
+	if (numbers.length < 2) {
+		return null;
+	}
+
+	let largestNumber = Math.max(numbers[0], numbers[1]);
+	let secondLargestNumber = Math.max(numbers[0], numbers[1]);
+
+	for (let i = 2; i < numbers.length; i++) {
+		const currentNumber = numbers[i];
+
+		if (currentNumber > largestNumber) {
+			secondLargestNumber = largestNumber;
+			largestNumber = currentNumber;
+		} else if (
+			currentNumber > secondLargestNumber &&
+			currentNumber !== largestNumber
+		) {
+			secondLargestNumber = currentNumber;
+		}
+	}
+
+	return secondLargestNumber;
+}
