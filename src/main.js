@@ -1,3 +1,3 @@
-import { reverseString } from "./base/base1.mjs";
+import { isPalindrome } from "./base/base1.mjs";
 
-console.log(`hash reversed is: ${reverseString("hash")}`);
+console.log(`${isPalindrome("omo")}`);

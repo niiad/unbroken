@@ -148,3 +148,29 @@ export function reverseString(word) {
 	// join the reversed array and return it
 	return reverse.join("");
 }
+
+/**
+ * checks if a given string is a palindrome.
+ *
+ * A palindrome is a word, phrase, number, or other sequence of characters that reads the
+ * same forward and backward
+ *
+ * Spaces, punctuation, and letter casing are usually ignored
+ *
+ * @param {string} word - the string to check for palindrome
+ *
+ * @returns {boolean} returns true if the string is a palindrome otherwise false
+ *
+ * @throws {Error} if the input is not a string
+ */
+export function isPalindrome(word) {
+	if (typeof word !== "string") {
+		throw new Error("Invalid input!!");
+	}
+
+	//make the string case-insensitive by removing spaces and converting
+	// to lowercase
+	const comparableWord = word.replace(/\s/g, "").toLowerCase();
+
+	return comparableWord === comparableWord.split("").reverse().join("");
+}
