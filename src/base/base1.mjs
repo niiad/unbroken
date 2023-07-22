@@ -13,19 +13,18 @@ export function areaOfCircle(radius) {
 	}
 
 	const pi = 3.14159;
-	const area = pi * (radius * radius);
 
-	return area;
+	return pi * (radius * radius);
 }
 
 /**
- * convert celsius to fahrenheit.
+ * convert Celsius to Fahrenheit.
  *
- * @param {number} celsius - The temperature in celsius.
+ * @param {number} celsius - The temperature in Celsius.
  *
- * @returns {number} the equivalent temperature in fahrenheit.
+ * @returns {number} the equivalent temperature in Fahrenheit.
  *
- * @throws {Error} if the provided celsius is not a number.
+ * @throws {Error} if the provided Celsius is not a number.
  */
 export function celsiusToFahrenheit(celsius) {
 	if (isNaN(celsius)) {
@@ -114,7 +113,7 @@ export function tailRecursiveFactorial(num, accumulator = 1) {
  * @throws {Error} if the input is not a number
  */
 export function evenOrOdd(num) {
-	if (typeof num !== "number" || isNaN(number)) {
+	if (typeof num !== "number" || isNaN(num)) {
 		throw new Error("Invalid input!!");
 	}
 
@@ -152,7 +151,7 @@ export function reverseString(word) {
 /**
  * checks if a given string is a palindrome.
  *
- * A palindrome is a word, phrase, number, or other sequence of characters that reads the
+ * A palindrome is a word, phrase, number, or another sequence of characters that reads the
  * same forward and backward
  *
  * Spaces, punctuation, and letter casing are usually ignored
@@ -205,11 +204,11 @@ export function findLargestElement(numbers) {
 }
 
 /**
- * finds the second largest element in an array of numbers
+ * finds the second-largest element in an array of numbers
  *
  * @param {number[]} numbers - the array of numbers
  *
- * @returns {number|null} - returns the second largest number or null if the array elements are less than 2
+ * @returns {number|null} - returns the second-largest number or null if the array elements are less than 2
  *
  * @throws {Error} if the input is not an array
  */
