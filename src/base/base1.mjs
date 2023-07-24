@@ -414,3 +414,20 @@ export function mergeSortedArrays(firstArray, secondArray) {
 
 	return mergedArray;
 }
+
+/**
+ * calculates the sum of all elements in an array
+ *
+ * @param {number[]} array - the array whose elements are to be summed
+ *
+ * @return {number} the sum of all the elements in the array
+ * */
+export function calculateSum(array) {
+	let sum = 0;
+
+	for (let i = 0; i < array.length; i++) {
+		sum += array[i];
+	}
+
+	return sum;
+}
