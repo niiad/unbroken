@@ -248,7 +248,7 @@ export function findSecondLargestElement(numbers) {
  *
  * @returns {number} the number of vowels in the input string
  * */
-function countVowelsUsingRegex(word) {
+export function countVowelsUsingRegex(word) {
 	const regex = /[aeiou]/gi;
 
 	const matches = word.match(regex);
@@ -263,7 +263,7 @@ function countVowelsUsingRegex(word) {
  *
  * @returns {number} the number of vowels in the input string
  * */
-function countVowels(word) {
+export function countVowels(word) {
 	const vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
 	let count = 0;
 
@@ -283,7 +283,7 @@ function countVowels(word) {
  *
  * @return {number} the average of the input array
  * */
-function calculateAverage(numbers) {
+export function calculateAverage(numbers) {
 	if (numbers.length === 0) {
 		return 0;
 	}
@@ -304,7 +304,7 @@ function calculateAverage(numbers) {
  *
  * @returns {boolean} - true if the array is sorted in ascending order, false otherwise
  * */
-function isAscending(numbers) {
+export function isAscending(numbers) {
 	for (let i = 0; i < numbers.length; i++) {
 		if (numbers[i] > numbers[i + 1]) {
 			return false;
@@ -322,7 +322,7 @@ function isAscending(numbers) {
  *
  * @returns {number} the index of the element in the array, or -1 if the element is not found
  * */
-function findIndex1(array, element) {
+export function findIndex1(array, element) {
 	return array.indexOf(element);
 }
 
@@ -334,7 +334,7 @@ function findIndex1(array, element) {
  *
  * @returns {number} the index of the element in the array, or -1 if the element is not found
  * */
-function findIndex2(array, element) {
+export function findIndex2(array, element) {
 	return array.findIndex((target) => target === element);
 }
 
@@ -346,7 +346,7 @@ function findIndex2(array, element) {
  *
  * @returns {number} the index of the element in the array, or -1 if the element is not found
  * */
-function findIndex3(array, element) {
+export function findIndex3(array, element) {
 	for (let i = 0; i < array.length; i++) {
 		if (array[i] === element) {
 			return i;
@@ -354,4 +354,27 @@ function findIndex3(array, element) {
 	}
 
 	return -1;
+}
+
+/**
+ * function to remove duplicates from an array
+ *
+ * @param {any[]} array - the array with duplicate elements
+ *
+ * @returns {any[]} an array with no duplicate element
+ * */
+export function removeDuplicates(array) {
+	const uniques = {};	// unique elements in the array
+	const result = [];
+
+	for (let i = 0; i < array.length; i++) {
+		// check if the element already exists in uniques
+		if (!uniques[array[i]]) {
+			uniques[array[i]] = true;
+
+			result.push(array[i]);	//	add unique element to result
+		}
+	}
+
+	return result;
 }
