@@ -240,3 +240,38 @@ export function findSecondLargestElement(numbers) {
 
 	return secondLargestNumber;
 }
+
+/**
+ * function to count the number of vowels in a string using regular expression
+ *
+ * @param {string} word - the input string
+ *
+ * @returns {number} the number of vowels in the input string
+ * */
+function countVowelsUsingRegex(word) {
+	const regex = /[aeiou]/gi;
+
+	const matches = word.match(regex);
+
+	return matches ? matches.length : 0;
+}
+
+/**
+ * function to count the number of vowels in a string
+ *
+ * @param {string} word - the input string
+ *
+ * @returns {number} the number of vowels in the input string
+ * */
+function countVowels(word) {
+	const vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
+	let count = 0;
+
+	for (let i = 0; i < word.length; i++) {
+		if (vowels.includes(word[i])) {
+			count++;
+		}
+	}
+
+	return count;
+}
