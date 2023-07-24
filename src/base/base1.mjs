@@ -378,3 +378,76 @@ export function removeDuplicates(array) {
 
 	return result;
 }
+
+/**
+ * merges two sorted arrays into a single sorted array
+ *
+ * @param {number[]} firstArray - the first sorted array
+ * @param {number[]} secondArray - the second sorted array
+ *
+ * @returns {number[]} a sorted array from the merged result of the input arrays
+ * */
+export function mergeSortedArrays(firstArray, secondArray) {
+	const mergedArray = [];
+	let i = 0;
+	let j = 0;
+
+	while (i < firstArray.length && j < secondArray.length) {
+		if (firstArray[i] <= secondArray[j]) {
+			mergedArray.push(firstArray[i]);
+			i++;
+		} else {
+			mergedArray.push(secondArray[j]);
+			j++;
+		}
+	}
+
+	while (i < firstArray.length) {
+		mergedArray.push(firstArray[i]);
+		i++;
+	}
+
+	while (j < secondArray.length) {
+		mergedArray.push(secondArray[j]);
+		j++;
+	}
+
+	return mergedArray;
+}
+
+/**
+ * calculates the sum of all elements in an array
+ *
+ * @param {number[]} array - the array whose elements are to be summed
+ *
+ * @return {number} the sum of all the elements in the array
+ * */
+export function calculateSum(array) {
+	let sum = 0;
+
+	for (let i = 0; i < array.length; i++) {
+		sum += array[i];
+	}
+
+	return sum;
+}
+
+/**
+ * counts the number of occurrences of a character in a string
+ *
+ * @param {string} word - the input string
+ * @param {string} character - the input character, for example, "a"
+ *
+ * @returns {number} the number of times the input character is present in the string
+ * */
+export function countOccurrences(word, character) {
+	let count = 0;
+
+	for (let i = 0; i < word.length; i++) {
+		if (word[i] === character) {
+			count++;
+		}
+	}
+
+	return count;
+}
