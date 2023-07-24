@@ -313,3 +313,45 @@ function isAscending(numbers) {
 
 	return true;
 }
+
+/**
+ * function to find the index of an element in an array using indexOf()
+ *
+ * @param {any[]} array - the array
+ * @param {any} element - the element to find in the array
+ *
+ * @returns {number} the index of the element in the array, or -1 if the element is not found
+ * */
+function findIndex1(array, element) {
+	return array.indexOf(element);
+}
+
+/**
+ * function to find the index of an element in an array using findIndex()
+ *
+ * @param {any[]} array - the array
+ * @param {any} element - the element to find in the array
+ *
+ * @returns {number} the index of the element in the array, or -1 if the element is not found
+ * */
+function findIndex2(array, element) {
+	return array.findIndex((target) => target === element);
+}
+
+/**
+ * function to find the index of an element in an array
+ *
+ * @param {any[]} array - the array
+ * @param {any} element - the element to find in the array
+ *
+ * @returns {number} the index of the element in the array, or -1 if the element is not found
+ * */
+function findIndex3(array, element) {
+	for (let i = 0; i < array.length; i++) {
+		if (array[i] === element) {
+			return i;
+		}
+	}
+
+	return -1;
+}
