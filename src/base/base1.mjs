@@ -378,3 +378,39 @@ export function removeDuplicates(array) {
 
 	return result;
 }
+
+/**
+ * merges two sorted arrays into a single sorted array
+ *
+ * @param {number[]} firstArray - the first sorted array
+ * @param {number[]} secondArray - the second sorted array
+ *
+ * @returns {number[]} a sorted array from the merged result of the input arrays
+ * */
+export function mergeSortedArrays(firstArray, secondArray) {
+	const mergedArray = [];
+	let i = 0;
+	let j = 0;
+
+	while (i < firstArray.length && j < secondArray.length) {
+		if (firstArray[i] <= secondArray[j]) {
+			mergedArray.push(firstArray[i]);
+			i++;
+		} else {
+			mergedArray.push(secondArray[j]);
+			j++;
+		}
+	}
+
+	while (i < firstArray.length) {
+		mergedArray.push(firstArray[i]);
+		i++;
+	}
+
+	while (j < secondArray.length) {
+		mergedArray.push(secondArray[j]);
+		j++;
+	}
+
+	return mergedArray;
+}
