@@ -296,3 +296,20 @@ function calculateAverage(numbers) {
 
 	return sum / numbers.length;
 }
+
+/**
+ * function to check if an array is sorted in ascending order
+ *
+ * @param {number[]} numbers - the array of numbers
+ *
+ * @returns {boolean} - true if the array is sorted in ascending order, false otherwise
+ * */
+function isAscending(numbers) {
+	for (let i = 0; i < numbers.length; i++) {
+		if (numbers[i] > numbers[i + 1]) {
+			return false;
+		}
+	}
+
+	return true;
+}
