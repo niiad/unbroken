@@ -275,3 +275,24 @@ function countVowels(word) {
 
 	return count;
 }
+
+/**
+ * function to calculate the average of numbers in an array
+ *
+ * @param {number[]} numbers - the array of numbers
+ *
+ * @return {number} the average of the input array
+ * */
+function calculateAverage(numbers) {
+	if (numbers.length === 0) {
+		return 0;
+	}
+
+	let sum = 0;
+
+	for (let i = 0; i < numbers.length; i++) {
+		sum += numbers[i];
+	}
+
+	return sum / numbers.length;
+}
