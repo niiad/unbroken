@@ -431,3 +431,23 @@ export function calculateSum(array) {
 
 	return sum;
 }
+
+/**
+ * counts the number of occurrences of a character in a string
+ *
+ * @param {string} word - the input string
+ * @param {string} character - the input character, for example, "a"
+ *
+ * @returns {number} the number of times the input character is present in the string
+ * */
+export function countOccurrences(word, character) {
+	let count = 0;
+
+	for (let i = 0; i < word.length; i++) {
+		if (word[i] === character) {
+			count++;
+		}
+	}
+
+	return count;
+}
