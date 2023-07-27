@@ -451,3 +451,175 @@ export function countOccurrences(word, character) {
 
 	return count;
 }
+
+/**
+ * checks if two strings are anagrams. anagrams are two words that have the same characters in a
+ * different order.
+ *
+ * @param {string} firstWord - the first input string
+ * @param {string} secondWord - the second input string
+ *
+ * @return {boolean} 'true' if the two input strings are anagrams, 'false' otherwise
+ * */
+export function areAnagrams(firstWord, secondWord) {
+	// remove non-alphanumeric characters and convert to lowercase
+	firstWord = firstWord.replace(/[^a-zA-Z0-9]/g, "").toLowerCase();
+	secondWord = secondWord.replace(/[^a-zA-Z0-9]/g, "").toLowerCase();
+
+	if (firstWord.length !== secondWord.length) {
+		return false;
+	}
+
+	const firstWordCharCount = {};
+	const secondWordCharCount = {};
+
+	for (let char of firstWord) {
+		firstWordCharCount[char] = (firstWordCharCount[char] || 0) + 1;
+	}
+
+	for (let char of secondWord) {
+		secondWordCharCount[char] = (secondWordCharCount[char] || 0) + 1;
+	}
+
+	for (let char in firstWordCharCount) {
+		if (firstWordCharCount[char] !== secondWordCharCount[char]) {
+			return false;
+		}
+	}
+
+	return true;
+}
+
+/**
+ * function to find the maximum and minimum values in an array of numbers
+ *
+ * @param {number[]} numbers - the array of numbers
+ *
+ * @return {Object} an object with the 'max' and 'min' properties of the array, 'null' for empty array
+ * */
+export function findMaxAndMin(numbers) {
+	if (numbers.length === 0) {
+		return null;
+	}
+
+	let max = numbers[0];
+	let min = numbers[0];
+
+	for (let i = 1; i < numbers.length; i++) {
+		const current = numbers[i];
+
+		if (current > max) {
+			max = current;
+		}
+
+		if (current < min) {
+			min = current;
+		}
+	}
+
+	return { max, min };
+}
+
+/**
+ * finds the longest word in a sentence
+ *
+ * @param {string} sentence - the input sentence
+ *
+ * @return {string} the longest word in the sentence, an empty string for an empty sentence
+ * */
+export function findLongestWord(sentence) {
+	const words = sentence.split("");
+
+	let longestWord = "";
+
+	for (let word of words) {
+		const cleanedWord = word.replace(/[^a-zA-Z0-9]/g, "");
+
+		if (cleanedWord.length > longestWord.length) {
+			longestWord = cleanedWord;
+		}
+	}
+
+	return longestWord;
+}
+
+/**
+ * function to calculate the power of a number
+ *
+ * @param {number} base - the base number
+ * @param {number} exponent - the exponent to which the base will be raised.
+ *
+ * @return {number} the result of the base being raised to the power of the exponent.
+ * */
+export function calculatePower(base, exponent) {
+	if (exponent === 0) {
+		return 1;
+	}
+
+	if (exponent < 0) {
+		return 1 / calculatePower(base, -exponent);
+	}
+
+	let result = 1;
+
+	for (let i = 1; i <= exponent; i++) {
+		result *= base;
+	}
+
+	return result;
+}
+
+/**
+ * swaps two numbers without using a temporary variable
+ *
+ * @param {number} number1 - the first number to be swapped
+ * @param {number} number2 - the second number to be swapped
+ *
+ * @return {Array} an array containing the two swapped numbers
+ * */
+export function swapUsingAddSubtract(number1, number2) {
+	number1 = number1 + number2;
+	number2 = number1 - number2;
+	number1 = number1 - number2;
+
+	return [number1, number2];
+}
+
+/**
+ * swaps two numbers without using a temporary variable
+ *
+ * @param {number} number1 - the first number to be swapped
+ * @param {number} number2 - the second number to be swapped
+ *
+ * @return {Array} an array containing the two swapped numbers
+ * */
+export function swapUsingBitwiseXOR(number1, number2) {
+	number1 = number1 ^ number2;
+	number2 = number1 ^ number2;
+	number1 = number1 ^ number2;
+
+	return [number1, number2];
+}
+
+/**
+ * finds the intersection of two arrays
+ *
+ * @param {any[]} firstArray - the first input array
+ * @param {any[]} secondArray - the second input array
+ *
+ * @return {any[]} an array containing the intersection of the two input arrays
+ * */
+export function findIntersection(firstArray, secondArray) {
+	const firstSet = new Set(firstArray);
+
+	const intersection = [];
+
+	for (let item of secondArray) {
+		if (firstSet.has(item)) {
+			intersection.push(item);
+			firstSet.delete(item);
+		}
+	}
+
+	return intersection;
+}
