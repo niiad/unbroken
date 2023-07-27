@@ -451,3 +451,43 @@ export function countOccurrences(word, character) {
 
 	return count;
 }
+
+/**
+ * checks if two strings are anagrams. anagrams are two words that have the same characters in a
+ * different order.
+ *
+ * @param {string} firstWord - the first input string
+ * @param {string} secondWord - the second input string
+ *
+ * @return {boolean} 'true' if the two input strings are anagrams, 'false' otherwise
+ * */
+export function areAnagrams(firstWord, secondWord) {
+	// remove non-alphanumeric characters and convert to lowercase
+	firstWord = firstWord.replace(/[^a-zA-Z0-9]/g, "").toLowerCase();
+	secondWord = secondWord.replace(/[^a-zA-Z0-9]/g, "").toLowerCase();
+
+	if (firstWord.length !== secondWord.length) {
+		return false;
+	}
+
+	const firstWordCharCount = {};
+	const secondWordCharCount = {};
+
+	for (let char of firstWord) {
+		firstWordCharCount[char] = (firstWordCharCount[char] || 0) + 1;
+	}
+
+	for (let char of secondWord) {
+		secondWordCharCount[char] = (secondWordCharCount[char] || 0) + 1;
+	}
+
+	for (let char in firstWordCharCount) {
+		if (firstWordCharCount[char] !== secondWordCharCount[char]) {
+			return false;
+		}
+	}
+
+	return true;
+}
+
+
