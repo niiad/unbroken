@@ -568,3 +568,35 @@ export function calculatePower(base, exponent) {
 
 	return result;
 }
+
+/**
+ * swaps two numbers without using a temporary variable
+ *
+ * @param {number} number1 - the first number to be swapped
+ * @param {number} number2 - the second number to be swapped
+ *
+ * @return {Array} an array containing the two swapped numbers
+ * */
+export function swapUsingAddSubtract(number1, number2) {
+	number1 = number1 + number2;
+	number2 = number1 - number2;
+	number1 = number1 - number2;
+
+	return [number1, number2];
+}
+
+/**
+ * swaps two numbers without using a temporary variable
+ *
+ * @param {number} number1 - the first number to be swapped
+ * @param {number} number2 - the second number to be swapped
+ *
+ * @return {Array} an array containing the two swapped numbers
+ * */
+export function swapUsingBitwiseXOR(number1, number2) {
+	number1 = number1 ^ number2;
+	number2 = number1 ^ number2;
+	number1 = number1 ^ number2;
+
+	return [number1, number2];
+}
