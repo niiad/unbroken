@@ -542,3 +542,29 @@ export function findLongestWord(sentence) {
 
 	return longestWord;
 }
+
+/**
+ * function to calculate the power of a number
+ *
+ * @param {number} base - the base number
+ * @param {number} exponent - the exponent to which the base will be raised.
+ *
+ * @return {number} the result of the base being raised to the power of the exponent.
+ * */
+export function calculatePower(base, exponent) {
+	if (exponent === 0) {
+		return 1;
+	}
+
+	if (exponent < 0) {
+		return 1 / calculatePower(base, -exponent);
+	}
+
+	let result = 1;
+
+	for (let i = 1; i <= exponent; i++) {
+		result *= base;
+	}
+
+	return result;
+}
