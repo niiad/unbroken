@@ -490,4 +490,32 @@ export function areAnagrams(firstWord, secondWord) {
 	return true;
 }
 
+/**
+ * function to find the maximum and minimum values in an array of numbers
+ *
+ * @param {number[]} numbers - the array of numbers
+ *
+ * @return {Object} an object with the 'max' and 'min' properties of the array, 'null' for empty array
+ * */
+export function findMaxAndMin(numbers) {
+	if (numbers.length === 0) {
+		return null;
+	}
 
+	let max = numbers[0];
+	let min = numbers[0];
+
+	for (let i = 1; i < numbers.length; i++) {
+		const current = numbers[i];
+
+		if (current > max) {
+			max = current;
+		}
+
+		if (current < min) {
+			min = current;
+		}
+	}
+
+	return { max, min };
+}
