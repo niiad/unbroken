@@ -600,3 +600,26 @@ export function swapUsingBitwiseXOR(number1, number2) {
 
 	return [number1, number2];
 }
+
+/**
+ * finds the intersection of two arrays
+ *
+ * @param {any[]} firstArray - the first input array
+ * @param {any[]} secondArray - the second input array
+ *
+ * @return {any[]} an array containing the intersection of the two input arrays
+ * */
+export function findIntersection(firstArray, secondArray) {
+	const firstSet = new Set(firstArray);
+
+	const intersection = [];
+
+	for (let item of secondArray) {
+		if (firstSet.has(item)) {
+			intersection.push(item);
+			firstSet.delete(item);
+		}
+	}
+
+	return intersection;
+}
