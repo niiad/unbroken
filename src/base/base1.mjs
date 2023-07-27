@@ -519,3 +519,26 @@ export function findMaxAndMin(numbers) {
 
 	return { max, min };
 }
+
+/**
+ * finds the longest word in a sentence
+ *
+ * @param {string} sentence - the input sentence
+ *
+ * @return {string} the longest word in the sentence, an empty string for an empty sentence
+ * */
+export function findLongestWord(sentence) {
+	const words = sentence.split("");
+
+	let longestWord = "";
+
+	for (let word of words) {
+		const cleanedWord = word.replace(/[^a-zA-Z0-9]/g, "");
+
+		if (cleanedWord.length > longestWord.length) {
+			longestWord = cleanedWord;
+		}
+	}
+
+	return longestWord;
+}
