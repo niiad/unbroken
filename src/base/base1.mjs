@@ -665,3 +665,24 @@ export function calculateTriangleArea(base, height) {
 
 	return (base * height) / 2;
 }
+
+/**
+ * checks if a given number is a prime number
+ *
+ * @param {number} num - the given number
+ *
+ * @return {boolean} returns 'true' if the given number is a prime number, otherwise 'false'
+ * */
+export function isPrime(num) {
+	if (num < 2) {
+		return false;
+	}
+
+	for (let i = 2; i <= Math.sqrt(num); i++) {
+		if (num % i === 0) {
+			return false;
+		}
+	}
+
+	return true;
+}
