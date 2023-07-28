@@ -885,3 +885,30 @@ export function isPerfectSquare(num) {
 
 	return Number.isInteger(squareRoot);
 }
+
+/**
+ * function to find the first non-repeated character in a string
+ *
+ * @param {string} word - the given string
+ *
+ * @returns {string|null} the first non-repeated character in the given string
+ * */
+export function firstNonRepeatedCharacter(word) {
+	if (typeof word !== "string" || word.length === 0) {
+		throw new Error("Input must be a non-empty string");
+	}
+
+	const characterFrequency = {};
+
+	for (let character of word) {
+		characterFrequency[character] = (characterFrequency[character] || 0) + 1;
+	}
+
+	for (let character of word) {
+		if (characterFrequency[character] === 1) {
+			return character;
+		}
+	}
+
+	return null;
+}
