@@ -649,3 +649,19 @@ export function decimalToBinary(decimal) {
 
 	return binary;
 }
+
+/**
+ * calculate the area of a triangle given its base and height
+ *
+ * @param {number} base - the base of the triangle
+ * @param {number} height - the height of the triangle
+ *
+ * @return {number} the area of the triangle
+ * */
+export function calculateTriangleArea(base, height) {
+	if (base <= 0 || height <= 0) {
+		throw new Error("base and height cannot be negative or zero");
+	}
+
+	return (base * height) / 2;
+}
