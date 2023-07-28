@@ -623,3 +623,29 @@ export function findIntersection(firstArray, secondArray) {
 
 	return intersection;
 }
+
+/**
+ * function that converts a decimal number to binary
+ *
+ * @param {number} decimal - the input decimal number
+ *
+ * @return {string} the binary form of the input decimal number
+ * */
+export function decimalToBinary(decimal) {
+	if (!Number.isInteger(decimal) || decimal < 0) {
+		throw new Error("decimal must be non-negative");
+	}
+
+	if (decimal === 0) {
+		return "0";
+	}
+
+	let binary = "";
+
+	while (decimal > 0) {
+		binary = (decimal % 2) + binary;
+		decimal = Math.floor(decimal / 2);
+	}
+
+	return binary;
+}
