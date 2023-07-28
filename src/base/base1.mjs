@@ -844,3 +844,27 @@ export function sortDescending(numbers) {
 
 	return numbers;
 }
+
+/**
+ * function to calculate the greatest common divisor of two numbers
+ *
+ * @param {number} firstNumber - the first number
+ * @param {number} secondNumber - the second number
+ *
+ * @returns {number} the greatest common divisor of the two given numbers
+ * */
+export function gcd(firstNumber, secondNumber) {
+	if (!Number.isInteger(firstNumber) || !Number.isInteger(secondNumber) || firstNumber <= 0 || secondNumber <= 0) {
+		throw new Error("Both inputs must be positive integers");
+	}
+
+	// Euclidean algorithm
+	while (secondNumber !== 0) {
+		const temp = secondNumber;
+
+		secondNumber = firstNumber % secondNumber;
+		firstNumber = temp;
+	}
+
+	return firstNumber;
+}
