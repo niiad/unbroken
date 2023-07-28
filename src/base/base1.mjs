@@ -459,7 +459,7 @@ export function countOccurrences(word, character) {
  * @param {string} firstWord - the first input string
  * @param {string} secondWord - the second input string
  *
- * @return {boolean} 'true' if the two input strings are anagrams, 'false' otherwise
+ * @returns {boolean} 'true' if the two input strings are anagrams, 'false' otherwise
  * */
 export function areAnagrams(firstWord, secondWord) {
 	// remove non-alphanumeric characters and convert to lowercase
@@ -495,7 +495,7 @@ export function areAnagrams(firstWord, secondWord) {
  *
  * @param {number[]} numbers - the array of numbers
  *
- * @return {Object} an object with the 'max' and 'min' properties of the array, 'null' for empty array
+ * @returns {Object} an object with the 'max' and 'min' properties of the array, 'null' for empty array
  * */
 export function findMaxAndMin(numbers) {
 	if (numbers.length === 0) {
@@ -525,7 +525,7 @@ export function findMaxAndMin(numbers) {
  *
  * @param {string} sentence - the input sentence
  *
- * @return {string} the longest word in the sentence, an empty string for an empty sentence
+ * @returns {string} the longest word in the sentence, an empty string for an empty sentence
  * */
 export function findLongestWord(sentence) {
 	const words = sentence.split("");
@@ -549,7 +549,7 @@ export function findLongestWord(sentence) {
  * @param {number} base - the base number
  * @param {number} exponent - the exponent to which the base will be raised.
  *
- * @return {number} the result of the base being raised to the power of the exponent.
+ * @returns {number} the result of the base being raised to the power of the exponent.
  * */
 export function calculatePower(base, exponent) {
 	if (exponent === 0) {
@@ -575,7 +575,7 @@ export function calculatePower(base, exponent) {
  * @param {number} number1 - the first number to be swapped
  * @param {number} number2 - the second number to be swapped
  *
- * @return {Array} an array containing the two swapped numbers
+ * @returns {Array} an array containing the two swapped numbers
  * */
 export function swapUsingAddSubtract(number1, number2) {
 	number1 = number1 + number2;
@@ -591,7 +591,7 @@ export function swapUsingAddSubtract(number1, number2) {
  * @param {number} number1 - the first number to be swapped
  * @param {number} number2 - the second number to be swapped
  *
- * @return {Array} an array containing the two swapped numbers
+ * @returns {Array} an array containing the two swapped numbers
  * */
 export function swapUsingBitwiseXOR(number1, number2) {
 	number1 = number1 ^ number2;
@@ -607,7 +607,7 @@ export function swapUsingBitwiseXOR(number1, number2) {
  * @param {any[]} firstArray - the first input array
  * @param {any[]} secondArray - the second input array
  *
- * @return {any[]} an array containing the intersection of the two input arrays
+ * @returns {any[]} an array containing the intersection of the two input arrays
  * */
 export function findIntersection(firstArray, secondArray) {
 	const firstSet = new Set(firstArray);
@@ -629,7 +629,7 @@ export function findIntersection(firstArray, secondArray) {
  *
  * @param {number} decimal - the input decimal number
  *
- * @return {string} the binary form of the input decimal number
+ * @returns {string} the binary form of the input decimal number
  * */
 export function decimalToBinary(decimal) {
 	if (!Number.isInteger(decimal) || decimal < 0) {
@@ -656,7 +656,7 @@ export function decimalToBinary(decimal) {
  * @param {number} base - the base of the triangle
  * @param {number} height - the height of the triangle
  *
- * @return {number} the area of the triangle
+ * @returns {number} the area of the triangle
  * */
 export function calculateTriangleArea(base, height) {
 	if (base <= 0 || height <= 0) {
@@ -671,7 +671,7 @@ export function calculateTriangleArea(base, height) {
  *
  * @param {number} num - the given number
  *
- * @return {boolean} returns 'true' if the given number is a prime number, otherwise 'false'
+ * @returns {boolean} returns 'true' if the given number is a prime number, otherwise 'false'
  * */
 export function isPrime(num) {
 	if (num < 2) {
@@ -692,7 +692,7 @@ export function isPrime(num) {
  *
  * @param {string} word - the given string
  *
- * @return {string} the lowercase version of the given string
+ * @returns {string} the lowercase version of the given string
  * */
 export function toLowerCase(word) {
 	if (typeof word !== "string") {
@@ -722,7 +722,7 @@ export function toLowerCase(word) {
  *
  * @param {string} word - the given string
  *
- * @return {string} the uppercase version of the given string
+ * @returns {string} the uppercase version of the given string
  * */
 export function toUpperCase(word) {
 	if (typeof word !== "string") {
@@ -752,7 +752,7 @@ export function toUpperCase(word) {
  * @param {number} start - the starting number of the range
  * @param {number} end - the ending number of the range
  *
- * @return {number|null} the largest prime number in the range
+ * @returns {number|null} the largest prime number in the range
  * */
 export function findLargestPrimeInRange(start, end) {
 	if (start >= end || start < 2) {
@@ -769,4 +769,23 @@ export function findLargestPrimeInRange(start, end) {
 	}
 
 	return largestPrime;
+}
+
+/**
+ * function to check if a year is a leap year
+ *
+ * @param {number} year - the given year
+ *
+ * @returns {boolean} 'true' if the given year is a leap year, otherwise 'false'
+ * */
+export function isLeapYear(year) {
+	if (!Number.isInteger(year) || year <= 0) {
+		throw new Error("Year must be positive");
+	}
+
+	const isDivisibleBy4 = year % 4 === 0;
+	const isDivisibleBy100 = year % 100 === 0;
+	const isDivisibleBy400 = year % 400 === 0;
+
+	return (isDivisibleBy4 && !isDivisibleBy100) || isDivisibleBy400;
 }
