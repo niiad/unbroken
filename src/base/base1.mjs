@@ -745,3 +745,28 @@ export function toUpperCase(word) {
 
 	return uppercase;
 }
+
+/**
+ * function to find the largest prime number in a range.
+ *
+ * @param {number} start - the starting number of the range
+ * @param {number} end - the ending number of the range
+ *
+ * @return {number|null} the largest prime number in the range
+ * */
+export function findLargestPrimeInRange(start, end) {
+	if (start >= end || start < 2) {
+		throw new Error("Input range invalid.");
+	}
+
+	let largestPrime = null;
+
+	for (let num = end; num >= start; num--) {
+		if (isPrime(num)) {
+			largestPrime = num;
+			break;
+		}
+	}
+
+	return largestPrime;
+}
