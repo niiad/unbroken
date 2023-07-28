@@ -935,3 +935,26 @@ export function calculateMedian(numbers) {
 		return (sorted[median - 1] + sorted[median]) / 2;
 	}
 }
+
+/**
+ * function to find the sum of all multiples of 3 or 5 below a given upper limit.
+ *
+ * @param {number} upperLimit - the given number representing the upper limit, exclusively
+ *
+ * @returns {number} the sum of all multiples of 3 or 5 below the given upper limit
+ * */
+export function sumMultiplesOf3And5(upperLimit) {
+	if (typeof upperLimit !== "number" || upperLimit <= 0) {
+		throw new Error("Input must be a positive integer");
+	}
+
+	let sum = 0;
+
+	for (let i = 1; i < upperLimit; i++) {
+		if (i % 3 === 0 || i % 5 === 0) {
+			sum += i;
+		}
+	}
+
+	return sum;
+}
