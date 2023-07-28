@@ -716,3 +716,32 @@ export function toLowerCase(word) {
 
 	return lowercase;
 }
+
+/**
+ * converts a given string to uppercase
+ *
+ * @param {string} word - the given string
+ *
+ * @return {string} the uppercase version of the given string
+ * */
+export function toUpperCase(word) {
+	if (typeof word !== "string") {
+		throw new Error("Input must be a string");
+	}
+
+	let uppercase = "";
+
+	for (let i = 0; i < word.length; i++) {
+		const characterCode = word.charCodeAt(i);
+		const character = word[i];
+
+		if (characterCode >= 97 && characterCode <= 122) {
+			const upperCharacter = String.fromCharCode(characterCode - 32);
+			uppercase += upperCharacter;
+		} else {
+			uppercase += character;
+		}
+	}
+
+	return uppercase;
+}
