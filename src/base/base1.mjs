@@ -868,3 +868,20 @@ export function gcd(firstNumber, secondNumber) {
 
 	return firstNumber;
 }
+
+/**
+ * checks if a number is a perfect square.
+ *
+ * @param {number} num - the given number
+ *
+ * @returns {boolean} 'true' if the given number is a perfect square, 'false' otherwise.
+ * */
+export function isPerfectSquare(num) {
+	if (!Number.isInteger(num) || num <= 0) {
+		throw new Error("Input must be a positive integer");
+	}
+
+	const squareRoot = Math.sqrt(num);
+
+	return Number.isInteger(squareRoot);
+}
