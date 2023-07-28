@@ -958,3 +958,25 @@ export function sumMultiplesOf3And5(upperLimit) {
 
 	return sum;
 }
+
+/**
+ * function to determine if a given number is positive, negative or zero.
+ *
+ * @param {number} num - the given number
+ *
+ * @returns {string} 'positive' if the given number is positive, 'zero' if the given number
+ * is zero, 'negative' if the given number is negative
+ * */
+export function determineNumberType(num) {
+	if (typeof num !== "number" || isNaN(num)) {
+		throw new Error("Input must be a number");
+	}
+
+	if (num > 0) {
+		return "positive";
+	} else if (num < 0) {
+		return "negative";
+	} else {
+		return "zero";
+	}
+}
