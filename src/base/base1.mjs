@@ -808,3 +808,22 @@ export function reverseSentence(sentence) {
 
 	return words.join("");
 }
+
+/**
+ * checks if the given number is a palindrome
+ *
+ * @param {number} num - the given number
+ *
+ * @returns {boolean} 'true' if the given number is a palindrome, 'false' otherwise
+ * */
+export function isPalindromeNumber(num) {
+	if (!Number.isInteger(num) || num < 0) {
+		throw new Error("Input must be a positive number");
+	}
+
+	const stringNum = num.toString();
+
+	const reversedStringNum = stringNum.split("").reverse().join("");
+
+	return stringNum === reversedStringNum;
+}
