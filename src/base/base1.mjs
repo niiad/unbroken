@@ -789,3 +789,22 @@ export function isLeapYear(year) {
 
 	return (isDivisibleBy4 && !isDivisibleBy100) || isDivisibleBy400;
 }
+
+/**
+ * function to reverse the order of words in a sentence
+ *
+ * @param {string} sentence - the given sentence
+ *
+ * @returns {string} a reversed order of the given sentence
+ * */
+export function reverseSentence(sentence) {
+	if (typeof sentence !== "string" || sentence.trim().length === 0) {
+		throw new Error("Input cannot be empty");
+	}
+
+	const words = sentence.split("");
+
+	words.reverse();
+
+	return words.join("");
+}
