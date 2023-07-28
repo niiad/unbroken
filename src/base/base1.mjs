@@ -912,3 +912,26 @@ export function firstNonRepeatedCharacter(word) {
 
 	return null;
 }
+
+/**
+ * function to calculate the median value of an array of numbers
+ *
+ * @param {number[]} numbers - the given array of numbers
+ *
+ * @returns {number} the median value of the given number array
+ * */
+export function calculateMedian(numbers) {
+	if (!Array.isArray(numbers) || numbers.length === 0) {
+		throw new Error("Input must be a non-empty array of numbers");
+	}
+
+	const sorted = numbers.slice().sort((num1, num2) => num1 - num2);
+
+	const median = Math.floor(sorted.length / 2);
+
+	if (sorted.length % 2 === 1) {
+		return sorted[median];
+	} else {
+		return (sorted[median - 1] + sorted[median]) / 2;
+	}
+}
