@@ -686,3 +686,33 @@ export function isPrime(num) {
 
 	return true;
 }
+
+/**
+ * converts a given string to lowercase
+ *
+ * @param {string} word - the given string
+ *
+ * @return {string} the lowercase version of the given string
+ * */
+export function toLowerCase(word) {
+	if (typeof word !== "string") {
+		throw new Error("input must be a string");
+	}
+
+	let lowercase = "";
+
+	for (let i = 0; i < word.length; i++) {
+		const characterCode = word.charCodeAt(i);
+		const character = word[i];
+
+		if (characterCode >= 65 && characterCode <= 90) {
+			const lowerCharacter = String.fromCharCode(characterCode + 32);
+
+			lowercase += lowerCharacter;
+		} else {
+			lowercase += character;
+		}
+	}
+
+	return lowercase;
+}
