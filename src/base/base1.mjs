@@ -827,3 +827,20 @@ export function isPalindromeNumber(num) {
 
 	return stringNum === reversedStringNum;
 }
+
+/**
+ * sorts an array of numbers in descending order
+ *
+ * @param {number[]} numbers - the array of numbers
+ *
+ * @returns {number[]} the sorted array of numbers in descending order
+ * */
+export function sortDescending(numbers) {
+	if (!Array.isArray(numbers)) {
+		throw new Error("Input must be a array");
+	}
+
+	numbers.sort((num1, num2) => num2 - num1);
+
+	return numbers;
+}
