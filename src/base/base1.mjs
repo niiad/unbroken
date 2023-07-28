@@ -459,7 +459,7 @@ export function countOccurrences(word, character) {
  * @param {string} firstWord - the first input string
  * @param {string} secondWord - the second input string
  *
- * @return {boolean} 'true' if the two input strings are anagrams, 'false' otherwise
+ * @returns {boolean} 'true' if the two input strings are anagrams, 'false' otherwise
  * */
 export function areAnagrams(firstWord, secondWord) {
 	// remove non-alphanumeric characters and convert to lowercase
@@ -495,7 +495,7 @@ export function areAnagrams(firstWord, secondWord) {
  *
  * @param {number[]} numbers - the array of numbers
  *
- * @return {Object} an object with the 'max' and 'min' properties of the array, 'null' for empty array
+ * @returns {Object} an object with the 'max' and 'min' properties of the array, 'null' for empty array
  * */
 export function findMaxAndMin(numbers) {
 	if (numbers.length === 0) {
@@ -525,7 +525,7 @@ export function findMaxAndMin(numbers) {
  *
  * @param {string} sentence - the input sentence
  *
- * @return {string} the longest word in the sentence, an empty string for an empty sentence
+ * @returns {string} the longest word in the sentence, an empty string for an empty sentence
  * */
 export function findLongestWord(sentence) {
 	const words = sentence.split("");
@@ -549,7 +549,7 @@ export function findLongestWord(sentence) {
  * @param {number} base - the base number
  * @param {number} exponent - the exponent to which the base will be raised.
  *
- * @return {number} the result of the base being raised to the power of the exponent.
+ * @returns {number} the result of the base being raised to the power of the exponent.
  * */
 export function calculatePower(base, exponent) {
 	if (exponent === 0) {
@@ -575,7 +575,7 @@ export function calculatePower(base, exponent) {
  * @param {number} number1 - the first number to be swapped
  * @param {number} number2 - the second number to be swapped
  *
- * @return {Array} an array containing the two swapped numbers
+ * @returns {Array} an array containing the two swapped numbers
  * */
 export function swapUsingAddSubtract(number1, number2) {
 	number1 = number1 + number2;
@@ -591,7 +591,7 @@ export function swapUsingAddSubtract(number1, number2) {
  * @param {number} number1 - the first number to be swapped
  * @param {number} number2 - the second number to be swapped
  *
- * @return {Array} an array containing the two swapped numbers
+ * @returns {Array} an array containing the two swapped numbers
  * */
 export function swapUsingBitwiseXOR(number1, number2) {
 	number1 = number1 ^ number2;
@@ -607,7 +607,7 @@ export function swapUsingBitwiseXOR(number1, number2) {
  * @param {any[]} firstArray - the first input array
  * @param {any[]} secondArray - the second input array
  *
- * @return {any[]} an array containing the intersection of the two input arrays
+ * @returns {any[]} an array containing the intersection of the two input arrays
  * */
 export function findIntersection(firstArray, secondArray) {
 	const firstSet = new Set(firstArray);
@@ -622,4 +622,361 @@ export function findIntersection(firstArray, secondArray) {
 	}
 
 	return intersection;
+}
+
+/**
+ * function that converts a decimal number to binary
+ *
+ * @param {number} decimal - the input decimal number
+ *
+ * @returns {string} the binary form of the input decimal number
+ * */
+export function decimalToBinary(decimal) {
+	if (!Number.isInteger(decimal) || decimal < 0) {
+		throw new Error("decimal must be non-negative");
+	}
+
+	if (decimal === 0) {
+		return "0";
+	}
+
+	let binary = "";
+
+	while (decimal > 0) {
+		binary = (decimal % 2) + binary;
+		decimal = Math.floor(decimal / 2);
+	}
+
+	return binary;
+}
+
+/**
+ * calculate the area of a triangle given its base and height
+ *
+ * @param {number} base - the base of the triangle
+ * @param {number} height - the height of the triangle
+ *
+ * @returns {number} the area of the triangle
+ * */
+export function calculateTriangleArea(base, height) {
+	if (base <= 0 || height <= 0) {
+		throw new Error("base and height cannot be negative or zero");
+	}
+
+	return (base * height) / 2;
+}
+
+/**
+ * checks if a given number is a prime number
+ *
+ * @param {number} num - the given number
+ *
+ * @returns {boolean} returns 'true' if the given number is a prime number, otherwise 'false'
+ * */
+export function isPrime(num) {
+	if (num < 2) {
+		return false;
+	}
+
+	for (let i = 2; i <= Math.sqrt(num); i++) {
+		if (num % i === 0) {
+			return false;
+		}
+	}
+
+	return true;
+}
+
+/**
+ * converts a given string to lowercase
+ *
+ * @param {string} word - the given string
+ *
+ * @returns {string} the lowercase version of the given string
+ * */
+export function toLowerCase(word) {
+	if (typeof word !== "string") {
+		throw new Error("input must be a string");
+	}
+
+	let lowercase = "";
+
+	for (let i = 0; i < word.length; i++) {
+		const characterCode = word.charCodeAt(i);
+		const character = word[i];
+
+		if (characterCode >= 65 && characterCode <= 90) {
+			const lowerCharacter = String.fromCharCode(characterCode + 32);
+
+			lowercase += lowerCharacter;
+		} else {
+			lowercase += character;
+		}
+	}
+
+	return lowercase;
+}
+
+/**
+ * converts a given string to uppercase
+ *
+ * @param {string} word - the given string
+ *
+ * @returns {string} the uppercase version of the given string
+ * */
+export function toUpperCase(word) {
+	if (typeof word !== "string") {
+		throw new Error("Input must be a string");
+	}
+
+	let uppercase = "";
+
+	for (let i = 0; i < word.length; i++) {
+		const characterCode = word.charCodeAt(i);
+		const character = word[i];
+
+		if (characterCode >= 97 && characterCode <= 122) {
+			const upperCharacter = String.fromCharCode(characterCode - 32);
+			uppercase += upperCharacter;
+		} else {
+			uppercase += character;
+		}
+	}
+
+	return uppercase;
+}
+
+/**
+ * function to find the largest prime number in a range.
+ *
+ * @param {number} start - the starting number of the range
+ * @param {number} end - the ending number of the range
+ *
+ * @returns {number|null} the largest prime number in the range
+ * */
+export function findLargestPrimeInRange(start, end) {
+	if (start >= end || start < 2) {
+		throw new Error("Input range invalid.");
+	}
+
+	let largestPrime = null;
+
+	for (let num = end; num >= start; num--) {
+		if (isPrime(num)) {
+			largestPrime = num;
+			break;
+		}
+	}
+
+	return largestPrime;
+}
+
+/**
+ * function to check if a year is a leap year
+ *
+ * @param {number} year - the given year
+ *
+ * @returns {boolean} 'true' if the given year is a leap year, otherwise 'false'
+ * */
+export function isLeapYear(year) {
+	if (!Number.isInteger(year) || year <= 0) {
+		throw new Error("Year must be positive");
+	}
+
+	const isDivisibleBy4 = year % 4 === 0;
+	const isDivisibleBy100 = year % 100 === 0;
+	const isDivisibleBy400 = year % 400 === 0;
+
+	return (isDivisibleBy4 && !isDivisibleBy100) || isDivisibleBy400;
+}
+
+/**
+ * function to reverse the order of words in a sentence
+ *
+ * @param {string} sentence - the given sentence
+ *
+ * @returns {string} a reversed order of the given sentence
+ * */
+export function reverseSentence(sentence) {
+	if (typeof sentence !== "string" || sentence.trim().length === 0) {
+		throw new Error("Input cannot be empty");
+	}
+
+	const words = sentence.split("");
+
+	words.reverse();
+
+	return words.join("");
+}
+
+/**
+ * checks if the given number is a palindrome
+ *
+ * @param {number} num - the given number
+ *
+ * @returns {boolean} 'true' if the given number is a palindrome, 'false' otherwise
+ * */
+export function isPalindromeNumber(num) {
+	if (!Number.isInteger(num) || num < 0) {
+		throw new Error("Input must be a positive number");
+	}
+
+	const stringNum = num.toString();
+
+	const reversedStringNum = stringNum.split("").reverse().join("");
+
+	return stringNum === reversedStringNum;
+}
+
+/**
+ * sorts an array of numbers in descending order
+ *
+ * @param {number[]} numbers - the array of numbers
+ *
+ * @returns {number[]} the sorted array of numbers in descending order
+ * */
+export function sortDescending(numbers) {
+	if (!Array.isArray(numbers)) {
+		throw new Error("Input must be a array");
+	}
+
+	numbers.sort((num1, num2) => num2 - num1);
+
+	return numbers;
+}
+
+/**
+ * function to calculate the greatest common divisor of two numbers
+ *
+ * @param {number} firstNumber - the first number
+ * @param {number} secondNumber - the second number
+ *
+ * @returns {number} the greatest common divisor of the two given numbers
+ * */
+export function gcd(firstNumber, secondNumber) {
+	if (!Number.isInteger(firstNumber) || !Number.isInteger(secondNumber) || firstNumber <= 0 || secondNumber <= 0) {
+		throw new Error("Both inputs must be positive integers");
+	}
+
+	// Euclidean algorithm
+	while (secondNumber !== 0) {
+		const temp = secondNumber;
+
+		secondNumber = firstNumber % secondNumber;
+		firstNumber = temp;
+	}
+
+	return firstNumber;
+}
+
+/**
+ * checks if a number is a perfect square.
+ *
+ * @param {number} num - the given number
+ *
+ * @returns {boolean} 'true' if the given number is a perfect square, 'false' otherwise.
+ * */
+export function isPerfectSquare(num) {
+	if (!Number.isInteger(num) || num <= 0) {
+		throw new Error("Input must be a positive integer");
+	}
+
+	const squareRoot = Math.sqrt(num);
+
+	return Number.isInteger(squareRoot);
+}
+
+/**
+ * function to find the first non-repeated character in a string
+ *
+ * @param {string} word - the given string
+ *
+ * @returns {string|null} the first non-repeated character in the given string
+ * */
+export function firstNonRepeatedCharacter(word) {
+	if (typeof word !== "string" || word.length === 0) {
+		throw new Error("Input must be a non-empty string");
+	}
+
+	const characterFrequency = {};
+
+	for (let character of word) {
+		characterFrequency[character] = (characterFrequency[character] || 0) + 1;
+	}
+
+	for (let character of word) {
+		if (characterFrequency[character] === 1) {
+			return character;
+		}
+	}
+
+	return null;
+}
+
+/**
+ * function to calculate the median value of an array of numbers
+ *
+ * @param {number[]} numbers - the given array of numbers
+ *
+ * @returns {number} the median value of the given number array
+ * */
+export function calculateMedian(numbers) {
+	if (!Array.isArray(numbers) || numbers.length === 0) {
+		throw new Error("Input must be a non-empty array of numbers");
+	}
+
+	const sorted = numbers.slice().sort((num1, num2) => num1 - num2);
+
+	const median = Math.floor(sorted.length / 2);
+
+	if (sorted.length % 2 === 1) {
+		return sorted[median];
+	} else {
+		return (sorted[median - 1] + sorted[median]) / 2;
+	}
+}
+
+/**
+ * function to find the sum of all multiples of 3 or 5 below a given upper limit.
+ *
+ * @param {number} upperLimit - the given number representing the upper limit, exclusively
+ *
+ * @returns {number} the sum of all multiples of 3 or 5 below the given upper limit
+ * */
+export function sumMultiplesOf3And5(upperLimit) {
+	if (typeof upperLimit !== "number" || upperLimit <= 0) {
+		throw new Error("Input must be a positive integer");
+	}
+
+	let sum = 0;
+
+	for (let i = 1; i < upperLimit; i++) {
+		if (i % 3 === 0 || i % 5 === 0) {
+			sum += i;
+		}
+	}
+
+	return sum;
+}
+
+/**
+ * function to determine if a given number is positive, negative or zero.
+ *
+ * @param {number} num - the given number
+ *
+ * @returns {string} 'positive' if the given number is positive, 'zero' if the given number
+ * is zero, 'negative' if the given number is negative
+ * */
+export function determineNumberType(num) {
+	if (typeof num !== "number" || isNaN(num)) {
+		throw new Error("Input must be a number");
+	}
+
+	if (num > 0) {
+		return "positive";
+	} else if (num < 0) {
+		return "negative";
+	} else {
+		return "zero";
+	}
 }
