@@ -59,3 +59,24 @@ export function reverseArray(array) {
 
     return reversed;
 }
+
+/**
+ * checks if an array is a subset of another array
+ *
+ * @param {any[]} subset - the given subset to be found in the superset
+ * @param {any[]} superset - the given superset which contains the subset
+ *
+ * @returns {boolean} 'true' is the given subset is found in the given superset, otherwise 'false'
+ * */
+export function isSubset(subset, superset) {
+    const trueSubset = new Set(subset);
+    const trueSuperset = new Set(superset);
+
+    for (const element of trueSubset) {
+        if (!trueSuperset.has(element)) {
+            return false;
+        }
+    }
+
+    return true;
+}
