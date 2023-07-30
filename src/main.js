@@ -1,3 +1,3 @@
-import { countOccurrences } from "./base/base1.mjs";
+import { binaryToDecimal } from "./base/base2.mjs";
 
-console.log(`${countOccurrences("animal", "a")}`);
+console.log(`${binaryToDecimal("0101")}`);
