@@ -42,3 +42,20 @@ export function countDigits(num) {
 
     return stringNum.length;
 }
+
+/**
+ * function that reverses the order of elements in a given array
+ *
+ * @param {any[]} array - the given array
+ *
+ * @returns {any[]} the reversed version of the given array
+ * */
+export function reverseArray(array) {
+    const reversed = [];
+
+    for (let i = array.length - 1; i >= 0; i--) {
+        reversed.push(array[i]);
+    }
+
+    return reversed;
+}
