@@ -23,3 +23,22 @@ export function binaryToDecimal(binary) {
 
     return decimal;
 }
+
+/**
+ * counts the number of digits in an integer
+ *
+ * @param {number} num - the given integer value
+ *
+ * @returns {number} the number of digits in the given integer
+ * */
+export function countDigits(num) {
+    const absolute = Math.abs(num);
+
+    if (absolute === 0) {
+        return 1;
+    }
+
+    const stringNum = absolute.toString();
+
+    return stringNum.length;
+}
