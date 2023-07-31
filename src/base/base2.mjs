@@ -200,3 +200,19 @@ export function containOnlyDigitsRegex(word) {
 
     return regex.test(word);
 }
+
+/**
+ * calculate the area of a rectangle given its length and width
+ *
+ * @param {number} length - the length of the rectangle
+ * @param {number} width - the width of the rectangle
+ *
+ * @returns {number} the area of the rectangle
+ * */
+export function calculateRectangleArea(length, width) {
+    if (typeof length !== "number" || typeof width !== "number" || length <= 0 || width <= 0) {
+        throw new Error("Length and width must be positive integers");
+    }
+
+    return length * width;
+}
