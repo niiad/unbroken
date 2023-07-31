@@ -80,3 +80,33 @@ export function isSubset(subset, superset) {
 
     return true;
 }
+
+/**
+ * find the longest common prefix in an array of strings
+ *
+ * @param {string[]} array - the given array of strings
+ *
+ * @returns {string} the longest common prefix in the given array of strings
+ * */
+export function longestCommonPrefix(array) {
+    if (array.length === 0) {
+        return "";
+    }
+
+    array.sort();
+
+    const first = array[0];
+    const last = array[array.length - 1];
+
+    let prefix = "";
+
+    for (let i = 0; i < first.length; i++) {
+        if (first.charAt(i) === last.charAt(i)) {
+            prefix += first.charAt(i);
+        } else {
+            break;
+        }
+    }
+
+    return prefix;
+}
