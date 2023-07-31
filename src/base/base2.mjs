@@ -139,3 +139,34 @@ export function fibonacciNumber(n) {
 
     return firstPrevious;
 }
+
+/**
+ * converts a decimal to hexadecimal
+ *
+ * @param {number} decimal - the given decimal number
+ *
+ * @returns {string} the hexadecimal form of the given decimal number
+ * */
+export function decimalToHex(decimal) {
+    if (decimal === 0) {
+        return "0";
+    }
+
+    const hex = "0123456789ABCDEF";
+
+    let result = "";
+    let num = Math.abs(decimal);
+
+    while (num > 0) {
+        const remainder = num % 16;
+
+        result = hex.charAt(remainder) + result;
+        num = Math.floor(num / 16);
+    }
+
+    if (decimal < 0) {
+        result = "-" + result;
+    }
+
+    return result;
+}
