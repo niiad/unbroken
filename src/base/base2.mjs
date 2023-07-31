@@ -80,3 +80,139 @@ export function isSubset(subset, superset) {
 
     return true;
 }
+
+/**
+ * find the longest common prefix in an array of strings
+ *
+ * @param {string[]} array - the given array of strings
+ *
+ * @returns {string} the longest common prefix in the given array of strings
+ * */
+export function longestCommonPrefix(array) {
+    if (array.length === 0) {
+        return "";
+    }
+
+    array.sort();
+
+    const first = array[0];
+    const last = array[array.length - 1];
+
+    let prefix = "";
+
+    for (let i = 0; i < first.length; i++) {
+        if (first.charAt(i) === last.charAt(i)) {
+            prefix += first.charAt(i);
+        } else {
+            break;
+        }
+    }
+
+    return prefix;
+}
+
+/**
+ * calculates the nth fibonacci number
+ *
+ * @param {number} n - the index of the fibonacci number to calculate
+ *
+ * @returns {number} the nth fibonacci number
+ * */
+export function fibonacciNumber(n) {
+    if (n === 0) {
+        return 0;
+    }
+
+    if (n === 1) {
+        return 1;
+    }
+
+    let firstPrevious = 1;  // F(n-1)
+    let secondPrevious = 0; // F(n-2)
+
+    for (let i = 2; i <= n; i++) {
+        const currentFibonacci = firstPrevious + secondPrevious;
+
+        secondPrevious = firstPrevious;
+        firstPrevious = currentFibonacci;
+    }
+
+    return firstPrevious;
+}
+
+/**
+ * converts a decimal to hexadecimal
+ *
+ * @param {number} decimal - the given decimal number
+ *
+ * @returns {string} the hexadecimal form of the given decimal number
+ * */
+export function decimalToHex(decimal) {
+    if (decimal === 0) {
+        return "0";
+    }
+
+    const hex = "0123456789ABCDEF";
+
+    let result = "";
+    let num = Math.abs(decimal);
+
+    while (num > 0) {
+        const remainder = num % 16;
+
+        result = hex.charAt(remainder) + result;
+        num = Math.floor(num / 16);
+    }
+
+    if (decimal < 0) {
+        result = "-" + result;
+    }
+
+    return result;
+}
+
+/**
+ * check if a given string contains only digits
+ *
+ * @param {string} word - the given string
+ *
+ * @returns {boolean} 'true' if the given string contains only digits, 'false' otherwise
+ * */
+export function containOnlyDigits(word) {
+    for (let i = 0; i < word.length; i++) {
+        if (isNaN(parseInt(word[i], 10))) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+/**
+ * check if a given string contains only digits using regex
+ *
+ * @param {string} word - the given string
+ *
+ * @returns {boolean} 'true' if the given string contains only digits, 'false' otherwise
+ * */
+export function containOnlyDigitsRegex(word) {
+    const regex = /^\d+$/;
+
+    return regex.test(word);
+}
+
+/**
+ * calculate the area of a rectangle given its length and width
+ *
+ * @param {number} length - the length of the rectangle
+ * @param {number} width - the width of the rectangle
+ *
+ * @returns {number} the area of the rectangle
+ * */
+export function calculateRectangleArea(length, width) {
+    if (typeof length !== "number" || typeof width !== "number" || length <= 0 || width <= 0) {
+        throw new Error("Length and width must be positive integers");
+    }
+
+    return length * width;
+}
