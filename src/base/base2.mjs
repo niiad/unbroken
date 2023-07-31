@@ -170,3 +170,33 @@ export function decimalToHex(decimal) {
 
     return result;
 }
+
+/**
+ * check if a given string contains only digits
+ *
+ * @param {string} word - the given string
+ *
+ * @returns {boolean} 'true' if the given string contains only digits, 'false' otherwise
+ * */
+export function containOnlyDigits(word) {
+    for (let i = 0; i < word.length; i++) {
+        if (isNaN(parseInt(word[i], 10))) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+/**
+ * check if a given string contains only digits using regex
+ *
+ * @param {string} word - the given string
+ *
+ * @returns {boolean} 'true' if the given string contains only digits, 'false' otherwise
+ * */
+export function containOnlyDigitsRegex(word) {
+    const regex = /^\d+$/;
+
+    return regex.test(word);
+}
