@@ -110,3 +110,32 @@ export function longestCommonPrefix(array) {
 
     return prefix;
 }
+
+/**
+ * calculates the nth fibonacci number
+ *
+ * @param {number} n - the index of the fibonacci number to calculate
+ *
+ * @returns {number} the nth fibonacci number
+ * */
+export function fibonacciNumber(n) {
+    if (n === 0) {
+        return 0;
+    }
+
+    if (n === 1) {
+        return 1;
+    }
+
+    let firstPrevious = 1;  // F(n-1)
+    let secondPrevious = 0; // F(n-2)
+
+    for (let i = 2; i <= n; i++) {
+        const currentFibonacci = firstPrevious + secondPrevious;
+
+        secondPrevious = firstPrevious;
+        firstPrevious = currentFibonacci;
+    }
+
+    return firstPrevious;
+}
