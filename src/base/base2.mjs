@@ -296,3 +296,26 @@ export function isValidEmail2(email) {
 
     return !(domainDot === -1 || domainDot === 0 || domainDot === domain.length - 1);
 }
+
+/**
+ * find the factors of a given number
+ *
+ * @param {number} num - the given number
+ *
+ * @returns {number[]} an array of the factors of the given number
+ * */
+export function findFactors(num) {
+    const factors = [];
+
+    for (let i = 1; i <= Math.sqrt(num); i++) {
+        if (num % i === 0) {
+            factors.push(i);
+        }
+
+        if (i !== num / i) {
+            factors.push(num / i);
+        }
+    }
+
+    return factors;
+}
