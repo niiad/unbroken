@@ -338,3 +338,14 @@ export function removeSpaces(words) {
 
     return spaceless;
 }
+
+/**
+ * removes all spaces from a given string
+ *
+ * @param {string} words - the given string
+ *
+ * @returns {string} a string without spaces
+ * */
+export function removeSpaces2(words) {
+    return words.replace(/\s+/g, "");
+}
