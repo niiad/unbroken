@@ -319,3 +319,22 @@ export function findFactors(num) {
 
     return factors;
 }
+
+/**
+ * removes all spaces from a given string
+ *
+ * @param {string} words - the given string
+ *
+ * @returns {string} a string without spaces
+ * */
+export function removeSpaces(words) {
+    let spaceless = "";
+
+    for (let i = 0; i < words.length; i++) {
+        if (words[i] !== "") {
+            spaceless += words[i];
+        }
+    }
+
+    return spaceless;
+}
