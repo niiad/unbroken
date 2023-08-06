@@ -319,3 +319,48 @@ export function findFactors(num) {
 
     return factors;
 }
+
+/**
+ * removes all spaces from a given string
+ *
+ * @param {string} words - the given string
+ *
+ * @returns {string} a string without spaces
+ * */
+export function removeSpaces(words) {
+    let spaceless = "";
+
+    for (let i = 0; i < words.length; i++) {
+        if (words[i] !== "") {
+            spaceless += words[i];
+        }
+    }
+
+    return spaceless;
+}
+
+/**
+ * removes all spaces from a given string
+ *
+ * @param {string} words - the given string
+ *
+ * @returns {string} a string without spaces
+ * */
+export function removeSpaces2(words) {
+    return words.replace(/\s+/g, "");
+}
+
+/**
+ * determines if a number is a power of two.
+ *
+ * @param {number} num - the given number
+ *
+ * @returns {boolean} 'true' if the given number is a power of two, 'false' otherwise
+ * */
+export function isPowerOfTwo(num) {
+    if (num <= 0) {
+        return false;
+    }
+
+    return (num & (num - 1)) === 0;
+}
