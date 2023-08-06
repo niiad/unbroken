@@ -243,3 +243,16 @@ export function findSecondSmallest(numbers) {
 
     return secondSmallest;
 }
+
+/**
+ * checks if a given string is a valid email address
+ *
+ * @param {string} email - the given string
+ *
+ * @returns {boolean} 'true' if the given string is an email address, 'false' otherwise
+ * */
+export function isValidEmail(email) {
+    const pattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+    return pattern.test(email);
+}
