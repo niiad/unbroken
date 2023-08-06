@@ -364,3 +364,22 @@ export function isPowerOfTwo(num) {
 
     return (num & (num - 1)) === 0;
 }
+
+/**
+ * calculate the sum of squares of numbers from 1 to num
+ *
+ * @param {number} num - the given number
+ *
+ * @returns {number} the sum of squares from 1 to the given num
+ * */
+export function sumOfSquares(num) {
+    let sum = 0;
+
+    for (let i = 1; i <= num; i++) {
+        const square = i * i;
+
+        sum += square;
+    }
+
+    return sum;
+}
