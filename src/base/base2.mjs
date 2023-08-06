@@ -216,3 +216,30 @@ export function calculateRectangleArea(length, width) {
 
     return length * width;
 }
+
+/**
+ * finds the second-smallest number in an array of numbers
+ *
+ * @param {number[]} numbers - the array of numbers
+ *
+ * @returns {number} the second-smallest number in the given array
+ * */
+export function findSecondSmallest(numbers) {
+    if (numbers.length < 2) {
+        throw new Error("Array must contain more than 2 numbers");
+    }
+
+    let smallest = Infinity;
+    let secondSmallest = Infinity;
+
+    for (let i = 0; i < numbers.length; i++) {
+        if (numbers[i] < smallest) {
+            secondSmallest = smallest;
+            smallest = numbers[i];
+        } else if (numbers[i] < secondSmallest && numbers[i] !== smallest) {
+            secondSmallest = numbers[i];
+        }
+    }
+
+    return secondSmallest;
+}
