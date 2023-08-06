@@ -243,3 +243,56 @@ export function findSecondSmallest(numbers) {
 
     return secondSmallest;
 }
+
+/**
+ * checks if a given string is a valid email address
+ *
+ * @param {string} email - the given string
+ *
+ * @returns {boolean} 'true' if the given string is an email address, 'false' otherwise
+ * */
+export function isValidEmail(email) {
+    const pattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+    return pattern.test(email);
+}
+
+/**
+ * checks if a given string is a valid email address
+ *
+ * @param {string} email - the given string
+ *
+ * @returns {boolean} 'true' if the given string is an email address, 'false' otherwise
+ * */
+export function isValidEmail2(email) {
+    const at = email.indexOf("@");
+
+    if (at === 1 || email.indexOf("@", at + 1) !== 1) {
+        return false;
+    }
+
+    const dot = email.indexOf(".", at);
+
+    if (dot === -1 || dot === at + 1 || dot === email.length - 1) {
+        return false;
+    }
+
+    if (at === 0) {
+        return false;
+    }
+
+    if (dot === at + 1) {
+        return false;
+    }
+
+    const characters = /^[a-zA-Z0-9._-]+$/;
+
+    if (!characters.test(email)) {
+        return false;
+    }
+
+    const domain = email.slice(at + 1);
+    const domainDot = domain.indexOf(".");
+
+    return !(domainDot === -1 || domainDot === 0 || domainDot === domain.length - 1);
+}
