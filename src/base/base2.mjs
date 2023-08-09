@@ -383,3 +383,19 @@ export function sumOfSquares(num) {
 
     return sum;
 }
+
+/**
+ * calculates the area of a parallelogram
+ *
+ * @param {number} base - the base of the parallelogram
+ * @param {number} height - the height of the parallelogram
+ *
+ * @returns {number} the area of the parallelogram
+ * */
+export function calculateParallelogramArea(base, height) {
+    if (base <= 0 || height <= 0) {
+        throw new Error("base and height must be positive numbers");
+    }
+
+    return base * height;
+}
