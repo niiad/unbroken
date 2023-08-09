@@ -364,3 +364,38 @@ export function isPowerOfTwo(num) {
 
     return (num & (num - 1)) === 0;
 }
+
+/**
+ * calculate the sum of squares of numbers from 1 to num
+ *
+ * @param {number} num - the given number
+ *
+ * @returns {number} the sum of squares from 1 to the given num
+ * */
+export function sumOfSquares(num) {
+    let sum = 0;
+
+    for (let i = 1; i <= num; i++) {
+        const square = i * i;
+
+        sum += square;
+    }
+
+    return sum;
+}
+
+/**
+ * calculates the area of a parallelogram
+ *
+ * @param {number} base - the base of the parallelogram
+ * @param {number} height - the height of the parallelogram
+ *
+ * @returns {number} the area of the parallelogram
+ * */
+export function calculateParallelogramArea(base, height) {
+    if (base <= 0 || height <= 0) {
+        throw new Error("base and height must be positive numbers");
+    }
+
+    return base * height;
+}
