@@ -399,3 +399,20 @@ export function calculateParallelogramArea(base, height) {
 
     return base * height;
 }
+
+/**
+ * function to find the middle element of an array
+ *
+ * @param {any[]} array - the given array
+ *
+ * @returns {any} the middle element of the given array
+ * */
+export function findMiddleElement(array) {
+    if (array.length === 0) {
+        throw new Error("array cannot be empty");
+    }
+
+    const middle = (array.length - 1) / 2;
+
+    return array[middle];
+}
