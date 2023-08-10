@@ -416,3 +416,20 @@ export function findMiddleElement(array) {
 
     return array[middle];
 }
+
+/**
+ * function to reverse the words in a string without changing their order
+ *
+ * @param {string} sentence - the given string
+ *
+ * @returns {string} a string whose words are the reversed version of the given string
+ * */
+export function reverseWordsInSentence(sentence) {
+    const words = sentence.split("");
+
+    const reverse = words.map(word => {
+        return word.split("").reverse().join("");
+    });
+
+    return reverse.join("");
+}
