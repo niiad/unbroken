@@ -433,3 +433,29 @@ export function reverseWordsInSentence(sentence) {
 
     return reverse.join("");
 }
+
+/**
+ * checks if a number is a palindrome without converting it to a string
+ *
+ * @param {number} num - the given number being checked
+ *
+ * @returns {boolean} 'true' if the given number is a palindrome, 'false' otherwise
+ * */
+export function isPalindromeNumber(num) {
+    if (num < 0) {
+        return false;
+    }
+
+    let original = num;
+    let reversed = 0;
+
+    while (num > 0) {
+        const digit = num % 10;
+
+        reversed = reversed * 10 + digit;
+
+        num = Math.floor(num / 10);
+    }
+
+    return original === reversed;
+}
