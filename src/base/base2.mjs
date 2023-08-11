@@ -459,3 +459,21 @@ export function isPalindromeNumber(num) {
 
     return original === reversed;
 }
+
+/**
+ * finds the last occurrence of a character in a string
+ *
+ * @param {string} word - the given string
+ * @param {string} character - the character to search
+ *
+ * @returns {number} the last index of the given character
+ * */
+export function lastOccurrenceOfCharacter(word, character) {
+    for (let i = word.length - 1; i >= 0; i--) {
+        if (word[i] === character) {
+            return i;
+        }
+    }
+
+    return -1;
+}
