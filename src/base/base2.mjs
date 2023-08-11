@@ -477,3 +477,20 @@ export function lastOccurrenceOfCharacter(word, character) {
 
     return -1;
 }
+
+/**
+ * function to calculate the area of a trapezoid
+ *
+ * @param {number} base1 - the base of the trapezoid
+ * @param {number} base2 - the base of the trapezoid
+ * @param {number} height - the height of the trapezoid
+ *
+ * @returns {number} the area of the trapezoid
+ * */
+export function calculateTrapezoidArea(base1, base2, height) {
+    if (base1 <= 0 || base2 <= 0 || height <= 0) {
+        throw new Error("bases and height must be positive");
+    }
+
+    return 0.5 * (base1 + base2) * height;
+}
