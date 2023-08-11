@@ -494,3 +494,26 @@ export function calculateTrapezoidArea(base1, base2, height) {
 
     return 0.5 * (base1 + base2) * height;
 }
+
+/**
+ * function to find the first non-repeated character in a string using a dictionary
+ *
+ * @param {string} word - the given string
+ *
+ * @returns {string|null} the first non-repeated character
+ * */
+export function findFirstNonRepeatingCharacter(word) {
+    const count = {};
+
+    for (const character of word) {
+        count[character] = (count[character] || 0) + 1;
+    }
+
+    for (const character of word) {
+        if (count[character] === 1) {
+            return character;
+        }
+    }
+
+    return null;
+}
