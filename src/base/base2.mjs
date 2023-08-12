@@ -541,3 +541,20 @@ export function isTriangularNumber(num) {
 
     return triangular === num;
 }
+
+/**
+ * function to calculate the sum of cubes of numbers from 1 to n
+ *
+ * @param {number} n - the upper bound
+ *
+ * @returns {number} the sum of cubes from 1 to the given upper bound
+ * */
+export function sumOfCubes(n) {
+    let sum = 0;
+
+    for (let i = 1; i <= n; i++) {
+        sum += i ** 3;
+    }
+
+    return sum;
+}
