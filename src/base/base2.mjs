@@ -558,3 +558,22 @@ export function sumOfCubes(n) {
 
     return sum;
 }
+
+/**
+ * function to find the smallest missing number in an array of positive integers
+ *
+ * @param {number[]} numbers - the array of positive integers
+ *
+ * @returns {number} the smallest missing number
+*/
+export function findSmallestMissing(numbers) {
+    const set = new Set(numbers);
+
+    let smallest = 1;
+
+    while(set.has(smallest)) {
+        smallest++;
+    }
+
+    return smallest;
+}
