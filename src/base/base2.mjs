@@ -517,3 +517,27 @@ export function findFirstNonRepeatingCharacter(word) {
 
     return null;
 }
+
+/**
+ * function to check if a number is a triangular number
+ *
+ * @param {number} num - the given number
+ *
+ * @returns {boolean} 'true' if the given number is a triangular number, 'false' otherwise
+ * */
+export function isTriangularNumber(num) {
+    if (num < 0) {
+        return false;
+    }
+
+    let n = 0;
+    let triangular = 0;
+
+    while(triangular < num) {
+        n++;
+
+        triangular = (n * (n + 1)) / 2;
+    }
+
+    return triangular === num;
+}
