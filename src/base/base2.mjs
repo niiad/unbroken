@@ -598,3 +598,25 @@ export function containsDuplicate(numbers) {
 
     return false;
 }
+
+/**
+ * determine if a number is a narcissistic number
+ *
+ * @param {number} num - the given number
+ *
+ * @returns {boolean} 'true' if the given number is a narcissistic number, 'false' otherwise
+ * */
+export function isNarcissisticNumber(num) {
+    const str = num.toString();
+    const digits = str.length;
+
+    let sum = 0;
+
+    for (const char of str) {
+        const digit = parseInt(char);
+
+        sum += Math.pow(digit, digits);
+    }
+
+    return sum === num;
+}
