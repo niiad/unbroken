@@ -577,3 +577,24 @@ export function findSmallestMissing(numbers) {
 
     return smallest;
 }
+
+/**
+ * function to check if an array contains duplicate elements
+ *
+ * @param {number[]} numbers - the array of numbers
+ *
+ * @returns {boolean} 'true' if the given array contains duplicate elements, 'false' otherwise
+ * */
+export function containsDuplicate(numbers) {
+    const set = new Set();
+
+    for (const num of numbers) {
+        if (set.has(num)) {
+            return true;
+        }
+
+        set.add(num);
+    }
+
+    return false;
+}
