@@ -620,3 +620,18 @@ export function isNarcissisticNumber(num) {
 
     return sum === num;
 }
+
+/**
+ * function to calculate the area of a square given its side length
+ *
+ * @param {number} length - the length of each side of the square
+ *
+ * @returns {number} the area of the square
+ * */
+export function calculateSquareArea(length) {
+    if (length <= 0) {
+        throw new Error("The length must be greater than 0");
+    }
+
+    return length * length;
+}
