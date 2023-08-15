@@ -1002,3 +1002,22 @@ export function isStrongNumber(num) {
 
 	return sumOfFactorials === original;
 }
+
+/**
+ * function to find the sum of all odd numbers from 1 to a given upper bound, n
+ *
+ * @param {number} n - the given upper bound
+ *
+ * @returns {number} the sum of all odd numbers from 1 to the given upper bound
+ * */
+export function sumOfOdds(n) {
+	let sum = 0;
+
+	for (let i = 1; i <= n; i++) {
+		if (i % 2 !== 0) {
+			sum += i;
+		}
+	}
+
+	return sum;
+}
