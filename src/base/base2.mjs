@@ -635,3 +635,24 @@ export function calculateSquareArea(length) {
 
     return length * length;
 }
+
+/**
+ * function to find the longest word in a sentence using a loop
+ *
+ * @param {string} sentence - the given sentence
+ *
+ * @returns {string} the longest word in the given sentence
+ * */
+export function findLongestWord(sentence) {
+    const words = sentence.split("");
+
+    let longest = "";
+
+    for (const word of words) {
+        if (word.length > longest.length) {
+            longest = word;
+        }
+    }
+
+    return longest;
+}
