@@ -1021,3 +1021,44 @@ export function sumOfOdds(n) {
 
 	return sum;
 }
+
+/**
+ * calculates the area of a rhombus given its diagonals
+ *
+ * @param {number} firstDiagonal - the first diagonal of the rhombus
+ * @param {number} secondDiagonal - the second diagonal of the rhombus
+ *
+ * @returns {number} the area of a rhombus
+ * */
+export function calculateRhombusArea(firstDiagonal, secondDiagonal) {
+	if (firstDiagonal <= 0 || secondDiagonal <= 0) {
+		throw new Error("Diagonals must be positive integers");
+	}
+
+	return (firstDiagonal * secondDiagonal) / 2;
+}
+
+/**
+ * function to check if a string is a valid IPv4 address
+ *
+ * @param {string} address - the given address string
+ *
+ * @returns {boolean} 'true' if the given string is a valid IPv4 address, 'false' otherwise
+ * */
+export function isValidIPv4(address) {
+	const octets = address.split(".");
+
+	if (octets.length !== 4) {
+		return false;
+	}
+
+	for (const octet of octets) {
+		const num = parseInt(octet);
+
+		if (isNaN(num) || num < 0 || num > 255 || octet !== num.toString()) {
+			return false;
+		}
+	}
+
+	return true;
+}
