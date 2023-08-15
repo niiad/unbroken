@@ -1037,3 +1037,28 @@ export function calculateRhombusArea(firstDiagonal, secondDiagonal) {
 
 	return (firstDiagonal * secondDiagonal) / 2;
 }
+
+/**
+ * function to check if a string is a valid IPv4 address
+ *
+ * @param {string} address - the given address string
+ *
+ * @returns {boolean} 'true' if the given string is a valid IPv4 address, 'false' otherwise
+ * */
+export function isValidIPv4(address) {
+	const octets = address.split(".");
+
+	if (octets.length !== 4) {
+		return false;
+	}
+
+	for (const octet of octets) {
+		const num = parseInt(octet);
+
+		if (isNaN(num) || num < 0 || num > 255 || octet !== num.toString()) {
+			return false;
+		}
+	}
+
+	return true;
+}
