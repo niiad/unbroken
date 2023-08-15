@@ -1021,3 +1021,19 @@ export function sumOfOdds(n) {
 
 	return sum;
 }
+
+/**
+ * calculates the area of a rhombus given its diagonals
+ *
+ * @param {number} firstDiagonal - the first diagonal of the rhombus
+ * @param {number} secondDiagonal - the second diagonal of the rhombus
+ *
+ * @returns {number} the area of a rhombus
+ * */
+export function calculateRhombusArea(firstDiagonal, secondDiagonal) {
+	if (firstDiagonal <= 0 || secondDiagonal <= 0) {
+		throw new Error("Diagonals must be positive integers");
+	}
+
+	return (firstDiagonal * secondDiagonal) / 2;
+}
