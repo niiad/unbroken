@@ -1062,3 +1062,30 @@ export function isValidIPv4(address) {
 
 	return true;
 }
+
+/**
+ * function to check if a string is a valid IPv4 address
+ *
+ * @param {string} address - the given address string
+ *
+ * @returns {boolean} 'true' if the given string is a valid IPv4 address, 'false' otherwise
+ * */
+export function isValidIPv4Regex(address) {
+	const pattern = /^(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})$/;
+
+	if (!pattern.test(address)) {
+		return false;
+	}
+
+	const octets = address.split(".");
+
+	for (const octet of octets) {
+		const num = parseInt(octet);
+
+		if (num < 0 || num > 255) {
+			return false;
+		}
+	}
+
+	return true;
+}
