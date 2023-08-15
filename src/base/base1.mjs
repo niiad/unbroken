@@ -980,3 +980,25 @@ export function determineNumberType(num) {
 		return "zero";
 	}
 }
+
+/**
+ * function to check if a number is a strong number
+ *
+ * @param {number} num - the given number
+ *
+ * @returns {boolean} 'true' if the given number is a strong number, 'false' otherwise
+ * */
+export function isStrongNumber(num) {
+	let original = num;
+	let sumOfFactorials = 0;
+
+	while (num > 0) {
+		const digit = num % 10;
+
+		sumOfFactorials += iterativeFactorial(digit);
+
+		num = Math.floor(num / 10);
+	}
+
+	return sumOfFactorials === original;
+}
