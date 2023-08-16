@@ -675,3 +675,20 @@ export function isHappyNumber(num) {
 
     return num === 1;
 }
+
+/**
+ * function to find the sum of all even numbers from 1 to n
+ *
+ * @param {number} n - the upper bound limit
+ *
+ * @returns {number} the sum of all even numbers from 1 to the given upper bound limit
+ * */
+export function sumOfEven(n) {
+    let sum = 0;
+
+    for (let i = 2; i <= n; i += 2) {
+        sum += i;
+    }
+
+    return sum;
+}
