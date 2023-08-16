@@ -656,3 +656,22 @@ export function findLongestWord(sentence) {
 
     return longest;
 }
+
+/**
+ * determines if a number is a happy number
+ *
+ * @param {number} num - the given number
+ *
+ * @returns {boolean} 'true' if the given number is a happy number, 'false' otherwise
+ * */
+export function isHappyNumber(num) {
+    const numbers = new Set();
+
+    while (num !== 1 && !numbers.has(num)) {
+        numbers.add(num);
+
+        num = sumOfSquares(num);
+    }
+
+    return num === 1;
+}
