@@ -692,3 +692,32 @@ export function sumOfEven(n) {
 
     return sum;
 }
+
+/**
+ * function to find the most frequent element in an array
+ *
+ * @param {any[]} array - an array of elements
+ *
+ * @returns {any} the most frequent element in the given array
+ * */
+export function findMostFrequentElement(array) {
+    const count = {};
+
+    let mostFrequentElement;
+    let maxCount = 0;
+
+    for (const element of array) {
+        if (count[element]) {
+            count[element]++;
+        } else {
+            count[element] = 1;
+        }
+
+        if (count[element] > maxCount) {
+            maxCount = count[element];
+            mostFrequentElement = element;
+        }
+    }
+
+    return mostFrequentElement;
+}
