@@ -721,3 +721,31 @@ export function findMostFrequentElement(array) {
 
     return mostFrequentElement;
 }
+
+/**
+ * function to check if a string is a valid IPv6 address
+ *
+ * @param {string} address - the given string address
+ *
+ * @returns {boolean} 'true' if the given string is a valid IPv6 address, 'false' otherwise
+ * */
+export function isValidIPv6(address) {
+    const pattern = /^[0-9A-Fa-f]{1,4}$/;
+    const segments = address.split(":");
+
+    if (segments.length !== 8) {
+        return false;
+    }
+
+    for (const segment of segments) {
+        if (segment === "" || segment.length > 4) {
+            return false;
+        }
+
+        if (!pattern.test(segment)) {
+            return false;
+        }
+    }
+
+    return true;
+}
