@@ -769,3 +769,18 @@ export function sumOfDigits(num) {
 
     return sum;
 }
+
+/**
+ * function to calculate the area of a regular polygon given the number of sides and the side length
+ *
+ * @param {number} sides - the number of sides of the polygon
+ * @param {number} length - the length of each side of the polygon
+ *
+ * @returns {number} the area of the regular polygon
+ * */
+export function calculatePolygonArea(sides, length) {
+    const numerator = sides * length ** 2;
+    const denominator = 4 * Math.tan(Math.PI / sides);
+
+    return numerator / denominator;
+}
