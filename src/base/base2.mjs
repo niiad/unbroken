@@ -784,3 +784,24 @@ export function calculatePolygonArea(sides, length) {
 
     return numerator / denominator;
 }
+
+/**
+ * function to find the first repeating element in an array
+ *
+ * @param {any[]} array - an array of elements
+ *
+ * @returns {any} the first repeating element in the array
+ * */
+export function findFirstRepeatingElement(array) {
+    const seen = new Set();
+
+    for (const element of array) {
+        if (seen.has(element)) {
+            return element;
+        }
+
+        seen.add(element);
+    }
+
+    return undefined;
+}
