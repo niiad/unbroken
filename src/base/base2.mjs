@@ -749,3 +749,23 @@ export function isValidIPv6(address) {
 
     return true;
 }
+
+/**
+ * function to find the sum of digits of a given number
+ *
+ * @param {number} num - the given number
+ *
+ * @returns {number} the sum of digits of the given number
+ * */
+export function sumOfDigits(num) {
+    let sum = 0;
+    const str = num.toString();
+
+    for (const char of str) {
+        const digit = parseInt(char);
+
+        sum += digit;
+    }
+
+    return sum;
+}
