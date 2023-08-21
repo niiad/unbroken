@@ -805,3 +805,26 @@ export function findFirstRepeatingElement(array) {
 
     return undefined;
 }
+
+/**
+ * function to check if a string is a pangram
+ *
+ * @param {string} word - the given string
+ *
+ * @returns {boolean} 'true' if the given string is a pangram, 'false' otherwise
+ * */
+export function isPangram(word) {
+    const alphabet = new Set("abcdefghijklmnopqrstuvwxyz");
+
+    for (const char of word.toLowerCase()) {
+        if (alphabet.has(char)) {
+            alphabet.delete(char);
+        }
+
+        if (alphabet.size === 0) {
+            return true;
+        }
+    }
+
+    return false;
+}
