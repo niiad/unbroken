@@ -828,3 +828,39 @@ export function isPangram(word) {
 
     return false;
 }
+
+/**
+ * function to find the product of all numbers in an array
+ *
+ * @param {number[]} numbers - the array of numbers
+ *
+ * @returns {number} the product of the array of numbers
+ * */
+export function productOfNumbers(numbers) {
+    if (numbers.length === 0) {
+        return 0;
+    }
+
+    let product = 1;
+
+    for (const num of numbers) {
+        product *= num;
+    }
+
+    return product;
+}
+
+/**
+ * function to calculate the perimeter of a circle given its radius
+ *
+ * @param {number} radius - the given radius of the circle
+ *
+ * @returns {number} the perimeter of the circle
+ * */
+export function calculateCirclePerimeter(radius) {
+    if (radius <= 0) {
+        throw new Error("radius must be greater than 0");
+    }
+
+    return 2 * Math.PI * radius;
+}
