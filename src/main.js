@@ -1,3 +1,3 @@
-import { binaryToDecimal } from "./base/base2.mjs";
+import { primeFactors } from "./base/base2.mjs";
 
-console.log(`${binaryToDecimal("0101")}`);
+console.log(`${primeFactors(5)}`);
