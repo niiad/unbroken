@@ -864,3 +864,30 @@ export function calculateCirclePerimeter(radius) {
 
     return 2 * Math.PI * radius;
 }
+
+/**
+ * function to find the prime factors of a number
+ *
+ * @param {number} num - the given number
+ *
+ * @returns {number[]} the prime factors of the given number
+ * */
+export function primeFactors(num) {
+    const factors = [];
+
+    let divisor = 2;
+
+    while (num > 2) {
+        if (num % divisor === 0) {
+            factors.push(divisor);
+
+            num /= divisor;
+        } else {
+            divisor++;
+        }
+    }
+
+    factors.push(num);
+
+    return factors;
+}
