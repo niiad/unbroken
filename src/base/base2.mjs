@@ -891,3 +891,19 @@ export function primeFactors(num) {
 
     return factors;
 }
+
+/**
+ * function to check if a number is a smith number
+ *
+ * @param {number} num - the given number
+ *
+ * @returns {boolean} 'true' if the given number is a smith number, 'false' otherwise
+ * */
+export function isSmithNumber(num) {
+    const original = sumOfDigits(num);
+    const factors = primeFactors(num);
+
+    const sumOfFactors = factors.reduce((sum, factor) => sum + sumOfDigits(factor), 0);
+
+    return original === sumOfFactors;
+}
