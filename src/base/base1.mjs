@@ -1089,3 +1089,18 @@ export function isValidIPv4Regex(address) {
 
 	return true;
 }
+
+/**
+ * function to calculate the perimeter of a square given its side length
+ *
+ * @param {number} side - the length of each sides of the square
+ *
+ * @returns {number} the perimeter of the square
+ * */
+export function calculateSquarePerimeter(side) {
+	if (side < 0 || isNaN(side)) {
+		throw new Error("side must be a positive integer");
+	}
+
+	return 4 * side;
+}
