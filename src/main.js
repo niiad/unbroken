@@ -1,3 +1,3 @@
-import { primeFactors } from "./base/base2.mjs";
+import { sumOfDigitsRaisedToPosition } from "./base/base2.mjs";
 
-console.log(`${primeFactors(5)}`);
+console.log(`${sumOfDigitsRaisedToPosition(12345)}`);
