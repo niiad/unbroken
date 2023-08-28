@@ -907,3 +907,24 @@ export function isSmithNumber(num) {
 
     return original === sumOfFactors;
 }
+
+/**
+ * function to find the sum of digits raised to the power of their position in a given number
+ *
+ * @param {number} num - the given number
+ *
+ * @returns {number} the sum of digits raised to the power of their position of the given number
+ * */
+export function sumOfDigitsRaisedToPosition(num) {
+    const str = num.toString();
+
+    let sum = 0;
+
+    for (let i = 0; i < str.length; i++) {
+        const digit = parseInt(str[i]);
+
+        sum += digit ** (i + 1);
+    }
+
+    return sum;
+}
