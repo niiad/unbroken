@@ -928,3 +928,14 @@ export function sumOfDigitsRaisedToPosition(num) {
 
     return sum;
 }
+
+/**
+ * function to determine if a number is a duck number
+ *
+ * @param {number} num - the given number
+ *
+ * @returns {boolean} 'true' if the given number is a duck number, 'false' otherwise
+ * */
+export function isDuckNumber(num) {
+    return num.toString().includes('0');
+}
