@@ -1,0 +1,8 @@
+[
+{
+  "directory": "C:/Users/niiad/github/hash/src/main/cpp/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\c++.exe -g -o CMakeFiles\\hash.dir\\main.cpp.obj -c C:\\Users\\niiad\\github\\hash\\src\\main\\cpp\\main.cpp",
+  "file": "C:\\Users\\niiad\\github\\hash\\src\\main\\cpp\\main.cpp",
+  "output": "CMakeFiles\\hash.dir\\main.cpp.obj"
+}
+]
