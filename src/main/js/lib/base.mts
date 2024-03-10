@@ -7,12 +7,12 @@
  *
  * @throws {Error} if the provided radius is not a non-negative number.
  */
-export function areaOfCircle(radius) {
-	if (isNaN(radius) || radius < 0) {
-		throw new Error("Invalid radius!!");
+export function areaOfCircle(radius: number): number {
+	if (radius < 0) {
+		throw new Error("radius must be greater than 0!!");
 	}
 
-	const pi = 3.14159;
+	const pi: number = 3.14159;
 
 	return pi * (radius * radius);
 }
