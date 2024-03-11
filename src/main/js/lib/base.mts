@@ -16,3 +16,20 @@ export function areaOfCircle(radius: number): number {
 
 	return pi * (radius * radius);
 }
+
+/**
+ * convert Celsius to Fahrenheit.
+ *
+ * @param {number} celsius - The temperature in Celsius.
+ *
+ * @returns {number} the equivalent temperature in Fahrenheit.
+ *
+ * @throws {Error} if the provided Celsius is not a number.
+ */
+export function celsiusToFahrenheit(celsius: number) {
+	if (isNaN(celsius)) {
+		throw new Error("Invalid value!!");
+	}
+
+	return celsius * (9 / 5) + 32;
+}
