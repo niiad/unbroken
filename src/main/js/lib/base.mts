@@ -33,3 +33,24 @@ export function celsiusToFahrenheit(celsius: number) {
 
 	return celsius * (9 / 5) + 32;
 }
+
+/**
+ * calculate the factorial of a number using recursion
+ *
+ * @param {number} num - the number for which factorial needs to be calculated.
+ *
+ * @returns {number} the factorial of the given number.
+ *
+ * @throws {Error} if the provided num is not a number.
+ */
+export function recursiveFactorial(num) {
+	if (isNaN(num)) {
+		throw new Error("Invalid value!!");
+	}
+
+	if (num === 0 || num === 1) {
+		return 1;
+	} else {
+		return num * recursiveFactorial(num - 1);
+	}
+}
