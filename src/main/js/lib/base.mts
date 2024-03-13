@@ -54,3 +54,26 @@ export function recursiveFactorial(num) {
 		return num * recursiveFactorial(num - 1);
 	}
 }
+
+/**
+ * calculate the factorial of a number using iteration
+ *
+ * @param {number} num - the number for which factorial needs to be calculated.
+ *
+ * @returns {number} the factorial of the given number.
+ *
+ * @throws {Error} if the provided num is not a number
+ */
+export function iterativeFactorial(num) {
+	if (isNaN(num)) {
+		throw new Error("Invalid value!!");
+	}
+
+	let result = 1;
+
+	for (let i = 2; i <= num; i++) {
+		result *= i;
+	}
+
+	return result;
+}
