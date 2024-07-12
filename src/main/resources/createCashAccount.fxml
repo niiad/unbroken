@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="495.0" prefWidth="350.0" styleClass="create-dialog" stylesheets="@css/styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.niiad.unbroken.framework.inputAdapters.CreateCashAccountController">
+    <children>
+        <Label layoutX="14.0" layoutY="14.0" text="Add Cash Account" textFill="#212529" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0">
+            <font>
+                <Font name="Trebuchet MS" size="18.0" />
+            </font></Label>
+        <Label layoutX="14.0" layoutY="85.0" text="Account Information" textFill="#6c757d">
+            <font>
+                <Font name="Trebuchet MS" size="14.0" />
+            </font></Label>
+        <TextField fx:id="accountNameField" layoutX="14.0" layoutY="127.0" prefHeight="40.0" prefWidth="322.0" promptText="Account Name" stylesheets="@css/styles.css" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.799999999999955">
+            <font>
+                <Font name="Trebuchet MS" size="14.0" />
+            </font>
+        </TextField>
+        <TextField fx:id="accountNumberField" layoutX="14.0" layoutY="192.0" prefHeight="40.0" prefWidth="150.0" promptText="Account Number" stylesheets="@css/styles.css">
+            <font>
+                <Font name="Trebuchet MS" size="14.0" />
+            </font>
+        </TextField>
+        <TextField fx:id="bankField" layoutX="14.0" layoutY="320.0" prefHeight="40.0" prefWidth="150.0" promptText="Bank" stylesheets="@css/styles.css" AnchorPane.leftAnchor="14.0">
+            <font>
+                <Font name="Trebuchet MS" size="14.0" />
+            </font>
+        </TextField>
+        <JFXButton fx:id="addButton" layoutX="185.0" layoutY="425.0" mnemonicParsing="false" onMouseClicked="#createCashAccount" prefHeight="42.0" prefWidth="150.0" styleClass="add-button" stylesheets="@css/styles.css" text="ADD" AnchorPane.rightAnchor="14.600000000000023">
+            <font>
+                <Font name="Trebuchet MS" size="14.0" />
+            </font></JFXButton>
+        <JFXButton fx:id="cancelButton" layoutX="14.0" layoutY="425.0" mnemonicParsing="false" onMouseClicked="#cancelCreateCashAccount" prefHeight="42.0" prefWidth="150.0" styleClass="cancel-button" stylesheets="@css/styles.css" text="CANCEL" AnchorPane.leftAnchor="14.0">
+            <font>
+                <Font name="Trebuchet MS" size="14.0" />
+            </font>
+        </JFXButton>
+        <TextField fx:id="balanceField" layoutX="185.0" layoutY="320.0" prefHeight="40.0" prefWidth="150.0" promptText="Balance" stylesheets="@css/styles.css" AnchorPane.rightAnchor="14.0">
+            <font>
+                <Font name="Trebuchet MS" size="14.0" />
+            </font>
+        </TextField>
+        <TextField fx:id="accountTypeField" layoutX="185.0" layoutY="192.0" prefHeight="40.0" prefWidth="150.0" promptText="Account Type" stylesheets="@css/styles.css">
+            <font>
+                <Font name="Trebuchet MS" size="14.0" />
+            </font>
+        </TextField>
+    </children>
+</AnchorPane>
+

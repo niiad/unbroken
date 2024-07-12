@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="360.0" prefWidth="350.0" styleClass="create-dialog" stylesheets="@css/styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.niiad.unbroken.framework.inputAdapters.DepositIntoCashAccountController">
+    <Label layoutX="14.0" layoutY="14.0" text="Make a Deposit" textFill="#212529" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0">
+        <font>
+            <Font name="Trebuchet MS" size="18.0" />
+        </font>
+    </Label>
+    <Label layoutX="14.0" layoutY="85.0" text="Account Information" textFill="#6c757d">
+        <font>
+            <Font name="Trebuchet MS" size="14.0" />
+        </font>
+    </Label>
+    <JFXButton fx:id="addButton" layoutX="185.0" layoutY="299.0" mnemonicParsing="false" onMouseClicked="#makeDeposit" prefHeight="42.0" prefWidth="150.0" styleClass="add-button" stylesheets="@css/styles.css" text="DEPOSIT" AnchorPane.rightAnchor="14.600000000000023">
+        <font>
+            <Font name="Trebuchet MS" size="14.0" />
+        </font>
+    </JFXButton>
+    <JFXButton fx:id="cancelButton" layoutX="14.0" layoutY="299.0" mnemonicParsing="false" onMouseClicked="#cancelMakeDeposit" prefHeight="42.0" prefWidth="150.0" styleClass="cancel-button" stylesheets="@css/styles.css" text="CANCEL" AnchorPane.leftAnchor="14.0">
+        <font>
+            <Font name="Trebuchet MS" size="14.0" />
+        </font>
+    </JFXButton>
+    <Label fx:id="amountError" layoutX="185.0" layoutY="241.0" prefHeight="14.0" prefWidth="150.0" textFill="#ff6354" AnchorPane.rightAnchor="14.0">
+        <font>
+            <Font name="Trebuchet MS" size="10.0" />
+        </font>
+    </Label>
+    <ChoiceBox fx:id="cashAccountChoiceBox" layoutX="15.0" layoutY="119.0" prefHeight="40.0" prefWidth="322.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" />
+    <TextField fx:id="amountField" layoutX="185.0" layoutY="192.0" prefHeight="40.0" prefWidth="150.0" promptText="Amount" stylesheets="@css/styles.css" AnchorPane.rightAnchor="14.0">
+        <font>
+            <Font name="Trebuchet MS" size="14.0" />
+        </font>
+    </TextField>
+    <TextField fx:id="senderField" layoutX="14.0" layoutY="192.0" prefHeight="40.0" prefWidth="150.0" promptText="Sender" stylesheets="@css/styles.css">
+        <font>
+            <Font name="Trebuchet MS" size="14.0" />
+        </font>
+    </TextField>
+    <Label fx:id="senderError" layoutX="14.0" layoutY="241.0" prefHeight="14.0" prefWidth="150.0" textFill="#ff6354" AnchorPane.leftAnchor="14.0">
+        <font>
+            <Font name="Trebuchet MS" size="10.0" />
+        </font>
+    </Label>
+</AnchorPane>
+

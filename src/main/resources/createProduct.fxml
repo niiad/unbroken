@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" styleClass="create-dialog" stylesheets="@css/styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.niiad.unbroken.framework.inputAdapters.CreateProductController">
+    <children>
+        <Label layoutX="19.0" layoutY="14.0" text="New Inventory Item" textFill="#212529" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0">
+            <font>
+                <Font name="Trebuchet MS" size="18.0" />
+            </font>
+        </Label>
+        <TextField fx:id="nameField" layoutX="14.0" layoutY="68.0" prefHeight="42.0" prefWidth="320.0" promptText="Product Name" stylesheets="@css/styles.css" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="68.0">
+            <font>
+                <Font name="Trebuchet MS" size="14.0" />
+            </font></TextField>
+        <TextField fx:id="unitPriceField" layoutX="14.0" layoutY="147.0" prefHeight="42.0" prefWidth="150.0" promptText="Unit Price" stylesheets="@css/styles.css" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="147.0">
+            <font>
+                <Font name="Trebuchet MS" size="14.0" />
+            </font>
+        </TextField>
+        <TextField fx:id="sellingPriceField" layoutX="183.0" layoutY="147.0" prefHeight="42.0" prefWidth="150.0" promptText="Selling Price" stylesheets="@css/styles.css" AnchorPane.leftAnchor="183.0" AnchorPane.topAnchor="147.0">
+            <font>
+                <Font name="Trebuchet MS" size="14.0" />
+            </font>
+        </TextField>
+        <Label layoutX="19.0" layoutY="229.0" text="Category" textFill="#6c757d" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="229.0">
+            <font>
+                <Font name="Trebuchet MS" size="12.0" />
+            </font>
+        </Label>
+        <TextField fx:id="categoryField" layoutX="14.0" layoutY="258.0" prefHeight="42.0" prefWidth="150.0" promptText="Category" stylesheets="@css/styles.css" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="258.0">
+            <font>
+                <Font name="Trebuchet MS" size="14.0" />
+            </font>
+        </TextField>
+        <TextArea fx:id="descriptionArea" layoutX="366.0" layoutY="68.0" prefHeight="200.0" prefWidth="420.0" promptText="Product Description" wrapText="true">
+            <font>
+                <Font name="Trebuchet MS" size="14.0" />
+            </font>
+        </TextArea>
+        <TextField fx:id="quantityField" layoutX="183.0" layoutY="258.0" prefHeight="42.0" prefWidth="150.0" promptText="Quantity" stylesheets="@css/styles.css" AnchorPane.leftAnchor="183.0" AnchorPane.topAnchor="258.0">
+            <font>
+                <Font name="Trebuchet MS" size="14.0" />
+            </font>
+        </TextField>
+        <Label layoutX="178.0" layoutY="228.0" text="Quantity" textFill="#6c757d" AnchorPane.leftAnchor="178.0" AnchorPane.topAnchor="229.0">
+            <font>
+                <Font name="Trebuchet MS" size="12.0" />
+            </font>
+        </Label>
+        <JFXButton fx:id="cancelButton" layoutX="235.0" layoutY="541.0" mnemonicParsing="false" onMouseClicked="#cancelCreateProduct" prefHeight="35.0" prefWidth="150.0" styleClass="cancel-button" stylesheets="@css/styles.css" text="Cancel">
+            <font>
+                <Font name="Trebuchet MS" size="14.0" />
+            </font>
+        </JFXButton>
+        <JFXButton fx:id="addButton" layoutX="399.0" layoutY="541.0" mnemonicParsing="false" onMouseClicked="#createProduct" prefHeight="35.0" prefWidth="150.0" styleClass="add-button" stylesheets="@css/styles.css" text="Add Product">
+            <font>
+                <Font name="Trebuchet MS" size="14.0" />
+            </font>
+        </JFXButton>
+        <Label fx:id="costPriceError" layoutX="177.0" layoutY="309.0" prefHeight="14.0" prefWidth="150.0" textFill="#ff6354" AnchorPane.leftAnchor="177.0" AnchorPane.topAnchor="198.4">
+            <font>
+                <Font name="Trebuchet MS" size="10.0" />
+            </font>
+        </Label>
+        <Label fx:id="unitPriceError" layoutX="14.0" layoutY="198.0" prefHeight="14.0" prefWidth="150.0" textFill="#ff6354" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="198.0">
+            <font>
+                <Font name="Trebuchet MS" size="10.0" />
+            </font>
+        </Label>
+        <Label fx:id="sellingPriceError" layoutX="176.0" layoutY="310.0" prefHeight="14.0" prefWidth="150.0" textFill="#ff6354" AnchorPane.leftAnchor="176.0" AnchorPane.topAnchor="310.0">
+            <font>
+                <Font name="Trebuchet MS" size="10.0" />
+            </font>
+        </Label>
+        <Label fx:id="nameFieldError" layoutX="14.0" layoutY="118.0" prefHeight="14.0" prefWidth="150.0" textFill="#ff6354" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="118.0">
+            <font>
+                <Font name="Trebuchet MS" size="10.0" />
+            </font>
+        </Label>
+        <Label fx:id="categoryError" layoutX="14.0" layoutY="310.0" prefHeight="14.0" prefWidth="150.0" textFill="#ff6354" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="310.0">
+            <font>
+                <Font name="Trebuchet MS" size="10.0" />
+            </font>
+        </Label>
+        <Label fx:id="quantityError" layoutX="183.0" layoutY="310.0" prefHeight="14.0" prefWidth="150.0" textFill="#ff6354" AnchorPane.leftAnchor="183.0" AnchorPane.topAnchor="310.4">
+            <font>
+                <Font name="Trebuchet MS" size="10.0" />
+            </font>
+        </Label>
+    </children>
+</AnchorPane>

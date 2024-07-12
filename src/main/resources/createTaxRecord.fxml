@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="495.0" prefWidth="350.0" styleClass="create-dialog" stylesheets="@css/styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.niiad.unbroken.framework.inputAdapters.CreateTaxRecordController">
+    <children>
+        <Label layoutX="14.0" layoutY="14.0" text="Add Tax Record" textFill="#212529" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0">
+            <font>
+                <Font name="Trebuchet MS" size="18.0" />
+            </font></Label>
+        <Label layoutX="14.0" layoutY="85.0" text="Tax Information" textFill="#6c757d">
+            <font>
+                <Font name="Trebuchet MS" size="14.0" />
+            </font></Label>
+        <TextField fx:id="taxCodeField" layoutX="14.0" layoutY="127.0" prefHeight="40.0" prefWidth="322.0" promptText="Tax Code" stylesheets="@css/styles.css" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0">
+            <font>
+                <Font name="Trebuchet MS" size="14.0" />
+            </font>
+        </TextField>
+        <TextField fx:id="taxTypeField" layoutX="14.0" layoutY="192.0" prefHeight="40.0" prefWidth="150.0" promptText="Tax Type" stylesheets="@css/styles.css">
+            <font>
+                <Font name="Trebuchet MS" size="14.0" />
+            </font>
+        </TextField>
+        <Label layoutX="17.0" layoutY="276.0" text="Payment Information" textFill="#6c757d">
+            <font>
+                <Font name="Trebuchet MS" size="14.0" />
+            </font>
+        </Label>
+        <TextField fx:id="amountPaidField" layoutX="14.0" layoutY="320.0" prefHeight="40.0" prefWidth="150.0" promptText="Amount Paid" stylesheets="@css/styles.css" AnchorPane.leftAnchor="14.0">
+            <font>
+                <Font name="Trebuchet MS" size="14.0" />
+            </font>
+        </TextField>
+        <JFXButton fx:id="addButton" layoutX="185.0" layoutY="425.0" mnemonicParsing="false" onMouseClicked="#createTaxRecord" prefHeight="42.0" prefWidth="150.0" styleClass="add-button" stylesheets="@css/styles.css" text="ADD" AnchorPane.rightAnchor="14.0">
+            <font>
+                <Font name="Trebuchet MS" size="14.0" />
+            </font></JFXButton>
+        <JFXButton fx:id="cancelButton" layoutX="14.0" layoutY="425.0" mnemonicParsing="false" onMouseClicked="#cancelCreateTaxRecord" prefHeight="42.0" prefWidth="150.0" styleClass="cancel-button" stylesheets="@css/styles.css" text="CANCEL" AnchorPane.leftAnchor="14.0">
+            <font>
+                <Font name="Trebuchet MS" size="14.0" />
+            </font>
+        </JFXButton>
+        <DatePicker fx:id="dateOfPaymentPicker" layoutX="185.0" layoutY="320.0" prefHeight="40.0" prefWidth="150.0" promptText="Date of Payment" AnchorPane.rightAnchor="14.0" />
+    </children>
+</AnchorPane>
+

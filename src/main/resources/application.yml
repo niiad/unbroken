@@ -3,3 +3,5 @@ spring:
     web-application-type: none
   application:
     name: unbroken
+    ui:
+      title: Unbroken Business Technology
