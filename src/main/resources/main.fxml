@@ -1,0 +1,733 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane minHeight="768.0" minWidth="1366.0" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.niiad.unbroken.framework.inputAdapters.MainController">
+    <TabPane fx:id="mainTabPane" layoutX="75.0" layoutY="62.0" prefHeight="768.0" prefWidth="1366.0" rotateGraphic="true" side="LEFT" stylesheets="@css/styles.css" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <Tab fx:id="dashboardTab" closable="false">
+            <graphic>
+                <Group>
+                    <Label rotate="90" text="Dashboard" textFill="black">
+                        <font>
+                            <Font name="Trebuchet MS" size="12.0" />
+                        </font>
+                    </Label>
+                </Group>
+            </graphic>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                <children>
+                    <Pane layoutX="35.0" layoutY="40.0" prefHeight="160.0" prefWidth="300.0" styleClass="card-background" stylesheets="@css/styles.css" AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="40.0">
+                        <children>
+                            <Label layoutX="14.0" layoutY="91.0" text="Sales" textFill="#6c757d">
+                                <font>
+                                    <Font name="Trebuchet MS" size="18.0" />
+                                </font>
+                            </Label>
+                            <ImageView fitHeight="42.0" fitWidth="42.0" layoutX="13.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@assets/sales.png" />
+                                </image>
+                            </ImageView>
+                            <Label layoutX="174.0" layoutY="91.0" text="Volume" textFill="#6c757d">
+                                <font>
+                                    <Font name="Trebuchet MS" size="18.0" />
+                                </font>
+                            </Label>
+                            <Label fx:id="dashboardSalesValue" layoutX="13.0" layoutY="120.0" prefHeight="21.0" prefWidth="151.0" text="GHC4,000,000.00" textFill="#212529">
+                                <font>
+                                    <Font name="Trebuchet MS" size="16.0" />
+                                </font>
+                            </Label>
+                            <Label fx:id="dashboardSalesCount" layoutX="175.0" layoutY="120.0" prefHeight="21.0" prefWidth="50.0" text="450" textFill="#212529">
+                                <font>
+                                    <Font name="Trebuchet MS" size="16.0" />
+                                </font>
+                            </Label>
+                            <Label layoutX="225.0" layoutY="120.0" prefHeight="21.0" prefWidth="62.0" text="+0.00%" textFill="#007200">
+                                <font>
+                                    <Font name="Trebuchet MS" size="14.0" />
+                                </font>
+                            </Label>
+                        </children></Pane>
+                    <Pane layoutX="410.0" layoutY="40.0" prefHeight="160.0" prefWidth="300.0" styleClass="card-background" stylesheets="@css/styles.css" AnchorPane.leftAnchor="410.0" AnchorPane.topAnchor="40.0">
+                        <children>
+                            <ImageView fitHeight="42.0" fitWidth="42.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@assets/supply-product.png" />
+                                </image>
+                            </ImageView>
+                            <Label layoutX="14.0" layoutY="91.0" text="Suppliers" textFill="#6c757d">
+                                <font>
+                                    <Font name="Trebuchet MS" size="18.0" />
+                                </font>
+                            </Label>
+                            <Label layoutX="159.0" layoutY="91.0" text="Supplies" textFill="#6c757d">
+                                <font>
+                                    <Font name="Trebuchet MS" size="18.0" />
+                                </font>
+                            </Label>
+                            <Label fx:id="dashboardSupplierCount" layoutX="14.0" layoutY="119.0" prefHeight="21.0" prefWidth="50.0" text="1,250" textFill="#212529">
+                                <font>
+                                    <Font name="Trebuchet MS" size="16.0" />
+                                </font>
+                            </Label>
+                            <Label fx:id="dashboardSuppliesCount" layoutX="159.0" layoutY="119.0" prefHeight="21.0" prefWidth="130.0" text="1,180" textFill="#212529">
+                                <font>
+                                    <Font name="Trebuchet MS" size="16.0" />
+                                </font>
+                            </Label>
+                        </children></Pane>
+                    <AnchorPane layoutX="767.0" layoutY="40.0" prefHeight="160.0" prefWidth="350.0" styleClass="card-background" stylesheets="@css/styles.css" AnchorPane.leftAnchor="780.0" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="40.0">
+                        <children>
+                            <ImageView fitHeight="42.0" fitWidth="42.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0">
+                                <image>
+                                    <Image url="@assets/products.png" />
+                                </image>
+                            </ImageView>
+                            <Label layoutX="14.0" layoutY="94.0" text="All Products" textFill="#6c757d" AnchorPane.leftAnchor="14.0">
+                                <font>
+                                    <Font name="Trebuchet MS" size="18.0" />
+                                </font>
+                            </Label>
+                            <Label layoutX="181.0" layoutY="94.0" text="Value" textFill="#6c757d" AnchorPane.leftAnchor="181.0">
+                                <font>
+                                    <Font name="Trebuchet MS" size="18.0" />
+                                </font>
+                            </Label>
+                            <Label fx:id="dashboardProductCount" layoutX="14.0" layoutY="121.0" prefHeight="22.0" prefWidth="110.0" text="450" textFill="#212529" AnchorPane.bottomAnchor="17.0" AnchorPane.leftAnchor="14.0">
+                                <font>
+                                    <Font name="Trebuchet MS" size="16.0" />
+                                </font>
+                            </Label>
+                            <Label fx:id="dashboardProductValue" layoutX="181.0" layoutY="121.0" prefHeight="22.0" prefWidth="180.0" text="400" textFill="#007200" AnchorPane.bottomAnchor="17.0" AnchorPane.leftAnchor="181.0">
+                                <font>
+                                    <Font name="Trebuchet MS" size="16.0" />
+                                </font>
+                            </Label>
+                        </children>
+                    </AnchorPane>
+                    <AnchorPane layoutX="35.0" layoutY="250.0" prefHeight="220.0" prefWidth="300.0" styleClass="card-background" stylesheets="@css/styles.css" AnchorPane.leftAnchor="35.0">
+                        <children>
+                            <PieChart layoutX="11.0" layoutY="10.0" prefHeight="200.0" prefWidth="280.0" title="Pie Chart" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
+                        </children></AnchorPane>
+                    <AnchorPane layoutX="410.0" layoutY="250.0" prefHeight="300.0" prefWidth="732.0" styleClass="card-background" stylesheets="@css/styles.css" AnchorPane.leftAnchor="410.0" AnchorPane.rightAnchor="35.0">
+                        <children>
+                            <LineChart layoutX="16.0" layoutY="10.0" prefHeight="280.0" prefWidth="700.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="10.0">
+                                <xAxis>
+                                    <CategoryAxis side="BOTTOM" />
+                                </xAxis>
+                                <yAxis>
+                                    <NumberAxis side="LEFT" />
+                                </yAxis>
+                            </LineChart>
+                        </children></AnchorPane>
+                    <AnchorPane layoutX="842.0" layoutY="595.0" prefHeight="160.0" prefWidth="300.0" styleClass="card-background" stylesheets="@css/styles.css" AnchorPane.leftAnchor="842.0" AnchorPane.rightAnchor="35.0">
+                        <children>
+                            <BarChart layoutX="15.0" layoutY="5.0" prefHeight="150.0" prefWidth="280.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="5.0">
+                                <xAxis>
+                                    <CategoryAxis side="BOTTOM" />
+                                </xAxis>
+                                <yAxis>
+                                    <NumberAxis side="LEFT" />
+                                </yAxis>
+                            </BarChart>
+                        </children></AnchorPane>
+                    <AnchorPane layoutX="35.0" layoutY="535.0" prefHeight="220.0" prefWidth="300.0" styleClass="card-background" stylesheets="@css/styles.css" AnchorPane.leftAnchor="35.0">
+                        <children>
+                            <PieChart layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="280.0" title="Pie Chart" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
+                        </children></AnchorPane>
+                    <Pane layoutX="410.0" layoutY="595.0" prefHeight="160.0" prefWidth="360.0" styleClass="card-background" stylesheets="@css/styles.css" AnchorPane.leftAnchor="410.0">
+                        <children>
+                            <ImageView fitHeight="42.0" fitWidth="42.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@assets/taxes.png" />
+                                </image>
+                            </ImageView>
+                            <Label layoutX="14.0" layoutY="102.0" text="Total Tax" textFill="#6c757d">
+                                <font>
+                                    <Font name="Trebuchet MS" size="18.0" />
+                                </font>
+                            </Label>
+                            <Label layoutX="198.0" layoutY="102.0" text="Avg Tax Per Month" textFill="#6c757d">
+                                <font>
+                                    <Font name="Trebuchet MS" size="18.0" />
+                                </font>
+                            </Label>
+                            <Label fx:id="dashboardTotalTaxValue" layoutX="14.0" layoutY="127.0" prefHeight="21.0" prefWidth="150.0" text="GHC617.38" textFill="#007200">
+                                <font>
+                                    <Font name="Trebuchet MS" size="16.0" />
+                                </font>
+                            </Label>
+                            <Label fx:id="dashboardTaxPerMonthValue" layoutX="198.0" layoutY="127.0" prefHeight="21.0" prefWidth="150.0" text="GHC229.17" textFill="#212529">
+                                <font>
+                                    <Font name="Trebuchet MS" size="16.0" />
+                                </font>
+                            </Label>
+                        </children></Pane>
+                </children></AnchorPane>
+        </Tab>
+        <Tab fx:id="salesTab" closable="false">
+            <graphic>
+                <Group>
+                    <Label rotate="90" text="Sales" textFill="black">
+                        <font>
+                            <Font name="Trebuchet MS" size="12.0" />
+                        </font>
+                    </Label>
+                </Group>
+            </graphic>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                <children>
+                    <JFXButton fx:id="createNewSalesButton" graphicTextGap="8.0" layoutX="961.0" layoutY="25.0" mnemonicParsing="false" onMouseClicked="#createNewSales" prefHeight="40.0" prefWidth="180.0" styleClass="create-button" stylesheets="@css/styles.css" text="Create a New Sales" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="25.0">
+                        <graphic>
+                            <ImageView fitHeight="20" fitWidth="20" pickOnBounds="true" preserveRatio="true">
+                                <Image url="@assets/add.png" />
+                            </ImageView>
+                        </graphic>
+                        <font>
+                            <Font name="Trebuchet MS" size="14.0" />
+                        </font>
+                    </JFXButton>
+                    <Pane layoutX="40.0" layoutY="74.0" prefHeight="160.0" prefWidth="320.0" styleClass="card-background" stylesheets="@css/styles.css" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="95.0">
+                        <children>
+                            <ImageView fitHeight="42.0" fitWidth="42.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@assets/orders.png" />
+                                </image>
+                            </ImageView>
+                            <Label layoutX="14.0" layoutY="95.0" text="All Sales" textFill="#6c757d">
+                                <font>
+                                    <Font name="Trebuchet MS" size="18.0" />
+                                </font>
+                            </Label>
+                            <Label layoutX="160.0" layoutY="95.0" text="Volume" textFill="#6c757d">
+                                <font>
+                                    <Font name="Trebuchet MS" size="18.0" />
+                                </font>
+                            </Label>
+                            <Label fx:id="salesCount" layoutX="15.0" layoutY="123.0" prefHeight="20.0" prefWidth="81.0" text="450" textFill="#007200">
+                                <font>
+                                    <Font name="Trebuchet MS" size="16.0" />
+                                </font>
+                            </Label>
+                            <Label fx:id="salesQuantity" layoutX="160.0" layoutY="123.0" prefHeight="20.0" prefWidth="115.0" text="50" textFill="#212529">
+                                <font>
+                                    <Font name="Trebuchet MS" size="16.0" />
+                                </font>
+                            </Label>
+                        </children></Pane>
+                    <Pane layoutX="405.0" layoutY="95.0" prefHeight="160.0" prefWidth="320.0" styleClass="card-background" stylesheets="@css/styles.css" AnchorPane.leftAnchor="410.0" AnchorPane.topAnchor="90.0">
+                        <children>
+                            <ImageView fitHeight="42.0" fitWidth="42.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@assets/raw-materials.png" />
+                                </image>
+                            </ImageView>
+                            <Label layoutX="17.0" layoutY="99.0" text="Value" textFill="#6c757d">
+                                <font>
+                                    <Font name="Trebuchet MS" size="18.0" />
+                                </font>
+                            </Label>
+                            <Label fx:id="salesValue" layoutX="18.0" layoutY="127.0" prefHeight="20.0" prefWidth="110.0" text="1,200" textFill="#007200">
+                                <font>
+                                    <Font name="Trebuchet MS" size="16.0" />
+                                </font>
+                            </Label>
+                        </children></Pane>
+                    <AnchorPane layoutX="761.0" layoutY="90.0" prefHeight="160.0" prefWidth="360.0" styleClass="card-background" stylesheets="@css/styles.css" AnchorPane.leftAnchor="780.0" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="90.0">
+                        <children>
+                            <LineChart layoutX="14.0" layoutY="7.0" prefHeight="150.0" prefWidth="350.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+                                <xAxis>
+                                    <CategoryAxis side="BOTTOM" />
+                                </xAxis>
+                                <yAxis>
+                                    <NumberAxis side="LEFT" />
+                                </yAxis>
+                            </LineChart>
+                        </children></AnchorPane>
+                    <AnchorPane layoutX="40.0" layoutY="293.0" prefHeight="450.0" prefWidth="1100.0" styleClass="card-background" stylesheets="@css/styles.css" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="35.0">
+                        <children>
+                            <TableView fx:id="salesTableView" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <columns>
+                                    <TableColumn fx:id="salesProductNameColumn" editable="false" minWidth="450.0" prefWidth="450.0" text="Product" />
+                                    <TableColumn fx:id="salesTimestampColumn" editable="false" minWidth="200.0" prefWidth="200.0" text="Timestamp" />
+                                    <TableColumn fx:id="salesUnitPriceColumn" editable="false" minWidth="150.0" prefWidth="150.0" text="Unit price" />
+                                    <TableColumn fx:id="salesSellingPriceColumn" editable="false" minWidth="150.0" prefWidth="150.0" text="Selling price" />
+                                    <TableColumn fx:id="salesQuantityPurchasedColumn" editable="false" minWidth="150.0" prefWidth="150.0" text="Quantity" />
+                                </columns>
+                            </TableView>
+                            <Pagination fx:id="salesPagination" layoutX="14.0" layoutY="14.0" maxPageIndicatorCount="5" pageCount="20" prefHeight="50.0" prefWidth="1085.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" />
+                        </children>
+                    </AnchorPane>
+                </children></AnchorPane>
+        </Tab>
+        <Tab fx:id="suppliersTab" closable="false">
+            <graphic>
+                <Group>
+                    <Label rotate="90" text="Suppliers" textFill="black">
+                        <font>
+                            <Font name="Trebuchet MS" size="12.0" />
+                        </font>
+                    </Label>
+                </Group>
+            </graphic>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                <children>
+                    <JFXButton fx:id="addNewSupplyButton" layoutX="962.0" layoutY="31.0" mnemonicParsing="false" onMouseClicked="#createNewSupply" prefHeight="40.0" prefWidth="180.0" styleClass="create-button" stylesheets="@css/styles.css" text="Create a New Supply" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="25.0">
+                        <graphic>
+                            <ImageView fitHeight="20" fitWidth="20" pickOnBounds="true" preserveRatio="true">
+                                <Image url="@assets/add.png" />
+                            </ImageView>
+                        </graphic>
+                        <font>
+                            <Font name="Trebuchet MS" size="14.0" />
+                        </font>
+                    </JFXButton>
+                    <Pane layoutX="37.0" layoutY="54.0" prefHeight="160.0" prefWidth="520.0" styleClass="card-background" stylesheets="@css/styles.css" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="90.0">
+                        <children>
+                            <ImageView fitHeight="42.0" fitWidth="42.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@assets/supply-product.png" />
+                                </image>
+                            </ImageView>
+                            <Label layoutX="14.0" layoutY="100.0" text="All Supplies" textFill="#6c757d">
+                                <font>
+                                    <Font name="Trebuchet MS" size="18.0" />
+                                </font>
+                            </Label>
+                            <Label layoutX="190.0" layoutY="100.0" text="Value" textFill="#6c757d">
+                                <font>
+                                    <Font name="Trebuchet MS" size="18.0" />
+                                </font>
+                            </Label>
+                            <Label fx:id="suppliesCount" layoutX="14.0" layoutY="125.0" prefHeight="20.0" prefWidth="140.0" text="1,250" textFill="#212529">
+                                <font>
+                                    <Font name="Trebuchet MS" size="16.0" />
+                                </font>
+                            </Label>
+                            <Label fx:id="suppliesValue" layoutX="190.0" layoutY="125.0" prefHeight="20.0" prefWidth="180.0" text="1,180" textFill="#007200">
+                                <font>
+                                    <Font name="Trebuchet MS" size="16.0" />
+                                </font>
+                            </Label>
+                            <Label layoutX="397.0" layoutY="100.0" text="All Suppliers" textFill="#6c757d">
+                                <font>
+                                    <Font name="Trebuchet MS" size="18.0" />
+                                </font>
+                            </Label>
+                            <Label fx:id="supplierCount" layoutX="397.0" layoutY="125.0" prefHeight="20.0" prefWidth="95.0" text="30" textFill="#212529">
+                                <font>
+                                    <Font name="Trebuchet MS" size="16.0" />
+                                </font>
+                            </Label>
+                        </children></Pane>
+                    <Pane layoutX="588.0" layoutY="95.0" prefHeight="160.0" prefWidth="520.0" styleClass="card-background" stylesheets="@css/styles.css" AnchorPane.leftAnchor="620.0" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="90.0" />
+                    <AnchorPane layoutX="45.0" layoutY="290.0" prefHeight="460.0" prefWidth="693.0" styleClass="card-background" stylesheets="@css/styles.css" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="35.0">
+                        <children>
+                            <TableView fx:id="supplyTableView" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <columns>
+                                    <TableColumn fx:id="supplySupplyNameColumn" editable="false" minWidth="300.0" prefWidth="300.0" text="Supplier" />
+                                    <TableColumn fx:id="supplyProductNameColumn" editable="false" minWidth="350.0" prefWidth="350.0" text="Product" />
+                                    <TableColumn fx:id="supplyUnitPriceColumn" editable="false" minWidth="150.0" prefWidth="150.0" text="Unit price" />
+                                    <TableColumn fx:id="supplyQuantityColumn" editable="false" minWidth="150.0" prefWidth="150.0" text="Quantity" />
+                                    <TableColumn fx:id="supplyTimestampColumn" editable="false" minWidth="150.0" prefWidth="150.0" text="Time received" />
+                                </columns>
+                            </TableView>
+                            <Pagination fx:id="supplyPagination" layoutX="14.0" layoutY="14.0" maxPageIndicatorCount="5" pageCount="20" prefHeight="50.0" prefWidth="1085.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" />
+                        </children>
+                    </AnchorPane>
+                    <JFXButton fx:id="addNewSupplierButton" layoutX="758.0" layoutY="25.0" mnemonicParsing="false" onMouseClicked="#createNewSupplier" prefHeight="40.0" prefWidth="180.0" styleClass="create-button" stylesheets="@css/styles.css" text="Add a New Supplier" AnchorPane.rightAnchor="240.0" AnchorPane.topAnchor="25.0">
+                        <graphic>
+                            <ImageView fitHeight="20" fitWidth="20" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@assets/add.png" />
+                                </image>
+                            </ImageView>
+                        </graphic>
+                        <font>
+                            <Font name="Trebuchet MS" size="14.0" />
+                        </font>
+                    </JFXButton>
+                </children></AnchorPane>
+        </Tab>
+        <Tab fx:id="inventoryTab" closable="false">
+            <graphic>
+                <Group>
+                    <Label rotate="90" text="Inventory" textFill="black">
+                        <font>
+                            <Font name="Trebuchet MS" size="12.0" />
+                        </font>
+                    </Label>
+                </Group>
+            </graphic>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                <children>
+                    <JFXButton fx:id="addNewProductButton" layoutX="1086.0" layoutY="27.0" mnemonicParsing="false" onMouseClicked="#addNewProduct" prefHeight="40" prefWidth="180" styleClass="create-button" stylesheets="@css/styles.css" text="Add a New Product" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="25.0">
+                        <graphic>
+                            <ImageView fitHeight="20" fitWidth="20" pickOnBounds="true" preserveRatio="true">
+                                <Image url="@assets/add.png" />
+                            </ImageView>
+                        </graphic>
+                        <font>
+                            <Font name="Trebuchet MS" size="14.0" />
+                        </font>
+                    </JFXButton>
+                    <Pane layoutX="90.0" layoutY="99.0" prefHeight="160.0" prefWidth="520.0" styleClass="card-background" stylesheets="@css/styles.css" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="90.0">
+                        <children>
+                            <ImageView fitHeight="42.0" fitWidth="42.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@assets/inventory.png" />
+                                </image>
+                            </ImageView>
+                            <Label layoutX="14.0" layoutY="99.0" text="All Products" textFill="#6c757d">
+                                <font>
+                                    <Font name="Trebuchet MS" size="18.0" />
+                                </font>
+                            </Label>
+                            <Label layoutX="260.0" layoutY="99.0" text="Value" textFill="#6c757d">
+                                <font>
+                                    <Font name="Trebuchet MS" size="18.0" />
+                                </font>
+                            </Label>
+                            <Label fx:id="inventoryProductCount" layoutX="14.0" layoutY="125.0" prefHeight="20.0" prefWidth="72.0" text="350">
+                                <font>
+                                    <Font name="Trebuchet MS" size="16.0" />
+                                </font>
+                            </Label>
+                            <Label fx:id="inventoryProductValue" layoutX="260.0" layoutY="125.0" prefHeight="20.0" prefWidth="250.0" text="GHC4.1M" textFill="#007200">
+                                <font>
+                                    <Font name="Trebuchet MS" size="16.0" />
+                                </font>
+                            </Label>
+                        </children></Pane>
+                    <Pane layoutX="558.0" layoutY="99.0" prefHeight="160.0" prefWidth="520.0" styleClass="card-background" stylesheets="@css/styles.css" AnchorPane.leftAnchor="620.0" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="90.0">
+                        <children>
+                            <ImageView fitHeight="42.0" fitWidth="42.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@assets/products.png" />
+                                </image>
+                            </ImageView>
+                            <Label layoutX="14.0" layoutY="100.0" text="Low Stock" textFill="#c1121f">
+                                <font>
+                                    <Font name="Trebuchet MS" size="18.0" />
+                                </font>
+                            </Label>
+                            <Label layoutX="392.0" layoutY="100.0" text="Depleted" textFill="#6c757d">
+                                <font>
+                                    <Font name="Trebuchet MS" size="18.0" />
+                                </font>
+                            </Label>
+                            <Label fx:id="inventoryLowStockProductCount" layoutX="14.0" layoutY="126.0" prefHeight="20.0" prefWidth="60.0" text="23">
+                                <font>
+                                    <Font name="Trebuchet MS" size="16.0" />
+                                </font>
+                            </Label>
+                            <Label fx:id="inventoryDepletedProductCount" layoutX="392.0" layoutY="126.0" prefHeight="20.0" prefWidth="60.0" text="3">
+                                <font>
+                                    <Font name="Trebuchet MS" size="16.0" />
+                                </font>
+                            </Label>
+                            <Label layoutX="175.0" layoutY="98.0" text="In Stock" textFill="#6c757d">
+                                <font>
+                                    <Font name="Trebuchet MS" size="18.0" />
+                                </font>
+                            </Label>
+                            <Label fx:id="inventoryInStockProductCount" layoutX="177.0" layoutY="126.0" prefHeight="20.0" prefWidth="60.0" text="316">
+                                <font>
+                                    <Font name="Trebuchet MS" size="16.0" />
+                                </font>
+                            </Label>
+                            <Label fx:id="inventoryPercentageInStock" layoutX="240.0" layoutY="125.0" prefHeight="20.0" prefWidth="50.0" text="86%" textFill="#007200">
+                                <font>
+                                    <Font name="Trebuchet MS" size="14.0" />
+                                </font>
+                            </Label>
+                        </children></Pane>
+                    <AnchorPane layoutX="45.0" layoutY="291.0" prefHeight="460.0" prefWidth="1095.0" styleClass="card-background" stylesheets="@css/styles.css" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="35.0">
+                        <children>
+                            <TableView fx:id="productTableView" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <columns>
+                                    <TableColumn fx:id="productNameColumn" editable="false" minWidth="450.0" prefWidth="450.0" text="Name" />
+                                    <TableColumn fx:id="productCategoryColumn" editable="false" minWidth="200.0" prefWidth="200.0" text="Category" />
+                                    <TableColumn fx:id="productUnitPriceColumn" editable="false" minWidth="150.0" prefWidth="150.0" text="Unit price" />
+                                    <TableColumn fx:id="productSellingPriceColumn" editable="false" minWidth="150.0" prefWidth="150.0" text="Selling price" />
+                                    <TableColumn fx:id="productQuantityInStockColumn" editable="false" minWidth="150.0" prefWidth="150.0" text="Quantity" />
+                                </columns>
+                            </TableView>
+                            <Pagination fx:id="productPagination" layoutX="14.0" layoutY="402.4" maxPageIndicatorCount="5" pageCount="20" prefHeight="50.0" prefWidth="1093.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" />
+                        </children>
+                    </AnchorPane>
+                </children></AnchorPane>
+        </Tab>
+        <Tab fx:id="accountingTab" closable="false">
+            <graphic>
+                <Group>
+                    <Label rotate="90" text="Accounting" textFill="black">
+                        <font>
+                            <Font name="Trebuchet MS" size="12.0" />
+                        </font>
+                    </Label>
+                </Group>
+            </graphic>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                <children>
+                    <Pane layoutX="54.0" layoutY="71.0" prefHeight="160.0" prefWidth="320.0" styleClass="card-background" stylesheets="@css/styles.css" AnchorPane.leftAnchor="45.0" AnchorPane.topAnchor="45.0">
+                        <children>
+                            <ImageView fitHeight="42.0" fitWidth="42.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@assets/sales.png" />
+                                </image>
+                            </ImageView>
+                            <Label layoutX="14.0" layoutY="92.0" text="Revenue" textFill="#6c757d">
+                                <font>
+                                    <Font name="Trebuchet MS" size="18.0" />
+                                </font>
+                            </Label>
+                            <Label layoutX="201.0" layoutY="92.0" text="Projection" textFill="#6c757d">
+                                <font>
+                                    <Font name="Trebuchet MS" size="18.0" />
+                                </font>
+                            </Label>
+                            <Label fx:id="totalRevenueValue" layoutX="14.0" layoutY="119.0" prefHeight="20.0" prefWidth="160.0" text="GHC4,340,000.00">
+                                <font>
+                                    <Font name="Trebuchet MS" size="16.0" />
+                                </font>
+                            </Label>
+                            <Label layoutX="200.0" layoutY="119.0" prefHeight="20.0" prefWidth="85.0" text="0.0%" textFill="#c1121f">
+                                <font>
+                                    <Font name="Trebuchet MS" size="16.0" />
+                                </font>
+                            </Label>
+                        </children></Pane>
+                    <Pane layoutX="405.0" layoutY="95.0" prefHeight="160.0" prefWidth="320.0" styleClass="card-background" stylesheets="@css/styles.css" AnchorPane.leftAnchor="410.0" AnchorPane.topAnchor="45.0">
+                        <children>
+                            <ImageView fitHeight="42.0" fitWidth="42.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@assets/profits.png" />
+                                </image>
+                            </ImageView>
+                            <Label layoutX="12.0" layoutY="93.0" text="Net Income" textFill="#6c757d">
+                                <font>
+                                    <Font name="Trebuchet MS" size="18.0" />
+                                </font>
+                            </Label>
+                            <Label layoutX="207.0" layoutY="93.0" text="Projection" textFill="#6c757d">
+                                <font>
+                                    <Font name="Trebuchet MS" size="18.0" />
+                                </font>
+                            </Label>
+                            <Label fx:id="netIncomeValue" layoutX="12.0" layoutY="120.0" prefHeight="20.0" prefWidth="160.0" text="GHC102,400.00" textFill="#007200">
+                                <font>
+                                    <Font name="Trebuchet MS" size="16.0" />
+                                </font>
+                            </Label>
+                            <Label layoutX="206.0" layoutY="118.0" prefHeight="20.0" prefWidth="85.0" text="0.0%" textFill="#007200">
+                                <font>
+                                    <Font name="Trebuchet MS" size="16.0" />
+                                </font>
+                            </Label>
+                        </children>
+                    </Pane>
+                    <Pane layoutX="758.0" layoutY="95.0" prefHeight="160.0" prefWidth="360.0" styleClass="card-background" stylesheets="@css/styles.css" AnchorPane.leftAnchor="780.0" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="45.0">
+                        <children>
+                            <ImageView fitHeight="42.0" fitWidth="42.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@assets/expenses.png" />
+                                </image>
+                            </ImageView>
+                            <Label layoutX="14.0" layoutY="91.0" text="Expenditure" textFill="#6c757d">
+                                <font>
+                                    <Font name="Trebuchet MS" size="18.0" />
+                                </font>
+                            </Label>
+                            <Label layoutX="204.0" layoutY="91.0" text="Balance" textFill="#6c757d">
+                                <font>
+                                    <Font name="Trebuchet MS" size="18.0" />
+                                </font>
+                            </Label>
+                            <Label fx:id="totalExpenditureValue" layoutX="14.0" layoutY="118.0" prefHeight="20.0" prefWidth="170.0" text="GHC47,255.47" textFill="#c1121f">
+                                <font>
+                                    <Font name="Trebuchet MS" size="16.0" />
+                                </font>
+                            </Label>
+                            <Label fx:id="totalBalanceValue" layoutX="204.0" layoutY="118.0" prefHeight="20.0" prefWidth="145.0" text="GHC10,450.00">
+                                <font>
+                                    <Font name="Trebuchet MS" size="16.0" />
+                                </font>
+                            </Label>
+                        </children>
+                    </Pane>
+                    <AnchorPane layoutX="45.0" layoutY="272.0" prefHeight="475.0" prefWidth="690.0">
+                        <TableView fx:id="cashAccountTableView" layoutY="14.0" prefHeight="388.0" prefWidth="690.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="5.0">
+                            <columns>
+                                <TableColumn fx:id="cashAccountNameColumn" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" text="Account Name" />
+                                <TableColumn fx:id="cashAccountNumberColumn" maxWidth="125.0" minWidth="125.0" prefWidth="125.0" text="Account Number" />
+                                <TableColumn fx:id="cashAccountBankColumn" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" text="Bank" />
+                                <TableColumn fx:id="cashAccountTypeColumn" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" text="Account Type" />
+                                <TableColumn fx:id="cashAccountBalanceColumn" maxWidth="160.0" minWidth="160.0" prefWidth="160.0" text="Balance" />
+                            </columns>
+                        </TableView>
+                        <Pagination fx:id="cashAccountsPagination" layoutY="417.0" maxPageIndicatorCount="5" pageCount="10" prefHeight="44.0" prefWidth="682.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                    </AnchorPane>
+                    <JFXButton fx:id="addNewCashAccountButton" layoutX="45.0" layoutY="272.0" mnemonicParsing="false" onMouseClicked="#addNewCashAccount" prefHeight="30.0" prefWidth="150.0" styleClass="add-button" stylesheets="@css/styles.css" text="Add New Cash Account" AnchorPane.leftAnchor="45.0" AnchorPane.topAnchor="225.0" />
+                    <JFXButton fx:id="depositIntoCashAccountButton" layoutX="520.0" layoutY="225.0" mnemonicParsing="false" onMouseClicked="#depositIntoCashAccount" prefHeight="30.0" prefWidth="100.0" styleClass="add-button" stylesheets="@css/styles.css" text="Deposit" AnchorPane.leftAnchor="520.0" AnchorPane.topAnchor="225.0" />
+                    <JFXButton fx:id="withdrawFromCashAccountButton" layoutX="630.0" layoutY="225.0" mnemonicParsing="false" onMouseClicked="#withdrawFromCashAccount" prefHeight="30.0" prefWidth="100.0" styleClass="add-button" stylesheets="@css/styles.css" text="Withdraw" AnchorPane.leftAnchor="630.0" AnchorPane.topAnchor="225.0" />
+                </children></AnchorPane>
+        </Tab>
+        <Tab fx:id="taxTab" closable="false">
+            <graphic>
+                <Group>
+                    <Label rotate="90" text="Tax" textFill="black">
+                        <font>
+                            <Font name="Trebuchet MS" size="12.0" />
+                        </font>
+                    </Label>
+                </Group>
+            </graphic>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                <children>
+                    <Pane layoutX="33.0" layoutY="94.0" prefHeight="160.0" prefWidth="520.0" styleClass="card-background" stylesheets="@css/styles.css" AnchorPane.leftAnchor="45.0" AnchorPane.topAnchor="45.0">
+                        <children>
+                            <Label layoutX="14.0" layoutY="101.0" text="Total Tax Paid" textFill="#6c757d">
+                                <font>
+                                    <Font name="Trebuchet MS" size="18.0" />
+                                </font>
+                            </Label>
+                            <Label layoutX="207.0" layoutY="101.0" text="Avg Tax Per Month" textFill="#6c757d">
+                                <font>
+                                    <Font name="Trebuchet MS" size="18.0" />
+                                </font>
+                            </Label>
+                            <Label layoutX="388.0" layoutY="101.0" text="Tax Relief" textFill="#6c757d">
+                                <font>
+                                    <Font name="Trebuchet MS" size="18.0" />
+                                </font>
+                            </Label>
+                            <Label fx:id="totalTaxPaidValue" layoutX="14.0" layoutY="129.0" prefHeight="20.0" prefWidth="150.0" text="GHC50,000.00" textFill="#007200">
+                                <font>
+                                    <Font name="Trebuchet MS" size="16.0" />
+                                </font>
+                            </Label>
+                            <Label fx:id="averageTaxPerMonthValue" layoutX="207.0" layoutY="129.0" prefHeight="20.0" prefWidth="140.0" text="GHC617.38" textFill="#212529">
+                                <font>
+                                    <Font name="Trebuchet MS" size="16.0" />
+                                </font>
+                            </Label>
+                            <Label layoutX="388.0" layoutY="129.0" text="0.00" textFill="#007200">
+                                <font>
+                                    <Font name="Trebuchet MS" size="16.0" />
+                                </font>
+                            </Label>
+                            <ImageView fitHeight="42.0" fitWidth="42.0" layoutX="22.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@assets/tax.png" />
+                                </image>
+                            </ImageView>
+                        </children></Pane>
+                    <Pane layoutX="588.0" layoutY="95.0" prefHeight="160.0" prefWidth="520.0" styleClass="card-background" stylesheets="@css/styles.css" AnchorPane.leftAnchor="620.0" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="45.0">
+                        <children>
+                            <ImageView fitHeight="42.0" fitWidth="42.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@assets/taxes.png" />
+                                </image>
+                            </ImageView>
+                            <Label layoutX="14.0" layoutY="103.0" text="Value Added Tax" textFill="#6c757d">
+                                <font>
+                                    <Font name="Trebuchet MS" size="18.0" />
+                                </font>
+                            </Label>
+                            <Label fx:id="valueAddedTaxValue" layoutX="15.0" layoutY="130.0" text="GHC545.50" textFill="#212529">
+                                <font>
+                                    <Font name="Trebuchet MS" size="16.0" />
+                                </font>
+                            </Label>
+                        </children>
+                    </Pane>
+                    <AnchorPane layoutX="45.0" layoutY="265.0" prefHeight="485.0" prefWidth="520.0" styleClass="card-background" stylesheets="@css/styles.css" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="45.0" AnchorPane.topAnchor="260.0" />
+                    <AnchorPane layoutX="615.0" layoutY="260.0" prefHeight="475.0" prefWidth="520.0" AnchorPane.rightAnchor="35.0">
+                        <TableView fx:id="taxRecordsTableView" layoutX="-12.0" prefHeight="420.0" prefWidth="520.0" AnchorPane.bottomAnchor="55.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <columns>
+                                <TableColumn fx:id="taxRecordCodeColumn" maxWidth="400.0" minWidth="190.0" prefWidth="190.0" text="Tax Code" />
+                                <TableColumn fx:id="taxRecordTypeColumn" maxWidth="250.0" minWidth="100.0" prefWidth="100.0" text="Tax Type" />
+                                <TableColumn fx:id="taxRecordAmountPaidColumn" maxWidth="400.0" minWidth="120.0" prefWidth="120.0" text="Amount Paid" />
+                                <TableColumn fx:id="taxRecordDateOfPaymentColumn" maxWidth="200.0" minWidth="100.0" prefWidth="100.0" text="Date" />
+                            </columns>
+                        </TableView>
+                        <Pagination fx:id="taxRecordsPagination" layoutY="431.0" maxPageIndicatorCount="5" pageCount="10" prefHeight="44.0" prefWidth="520.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                    </AnchorPane>
+                    <Label layoutX="620.0" layoutY="228.0" text="Tax Records" textFill="#6c757d">
+                        <font>
+                            <Font name="Trebuchet MS" size="16.0" />
+                        </font>
+                    </Label>
+                    <JFXButton fx:id="addTaxRecordButton" layoutX="1022.3999999999999" layoutY="220.0" mnemonicParsing="false" onMouseClicked="#addNewTaxRecord" prefHeight="30.0" prefWidth="120.0" styleClass="add-button" stylesheets="@css/styles.css" text="Add Tax Record" AnchorPane.rightAnchor="35.0" />
+                </children></AnchorPane>
+        </Tab>
+        <Tab fx:id="marketTab" closable="false">
+            <graphic>
+                <Group>
+                    <Label rotate="90" text="Market" textFill="black">
+                        <font>
+                            <Font name="Trebuchet MS" size="12.0" />
+                        </font>
+                    </Label>
+                </Group>
+            </graphic>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                <children>
+                    <GridPane fx:id="marketProductGrid" hgap="10.0" layoutX="16.0" layoutY="88.0" prefHeight="666.0" prefWidth="1145.0" vgap="10.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0">
+                        <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        </columnConstraints>
+                        <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        </rowConstraints>
+                    </GridPane>
+                </children></AnchorPane>
+        </Tab>
+        <Tab fx:id="settingsTab" closable="false">
+            <graphic>
+                <Group>
+                    <children>
+                        <Label rotate="90" text="Settings" textFill="black">
+                            <font>
+                                <Font name="Trebuchet MS" size="12.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </Group>
+            </graphic>
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            </content>
+        </Tab>
+    </TabPane>
+</AnchorPane>
+

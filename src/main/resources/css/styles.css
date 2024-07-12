@@ -1,0 +1,180 @@
+.login-root {
+    -fx-background-color: #FFFFFF;
+}
+
+.sign-in-button {
+    -fx-background-color : #FFFFFF;
+    -fx-border-color: #1098F7;
+    -fx-text-fill:  #1098F7;
+    -fx-border-radius: 5px;
+    -fx-border-width: 2px;
+}
+
+.contact-button {
+    -fx-background-color: #1098F7;
+}
+
+.contact-button:pressed {
+    -fx-background-color: #355ECE;
+}
+
+.login-field {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #C0C0C0;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+    -fx-padding: 5px;
+    -fx-text-fill: #4F4F4F;
+}
+
+.login-field:focused {
+    -fx-border-color: #1098F7;
+    -fx-border-width: 2px;
+}
+
+#mainTabPane {
+    -fx-tab-min-height: 15em;
+    -fx-tab-max-height: 15em;
+    -fx-tab-min-width: 1.5em;
+    -fx-tab-max-width: 1.5em;
+    -fx-padding: 0 -1 -1 0;
+}
+
+.main-root {
+    -fx-background-color: #FFFFFF;
+}
+
+.tab {
+    -fx-background-color: #FFFFFF;
+}
+
+.tab:selected {
+    -fx-border-width: 3 0 0 0;
+    -fx-border-color: #1098F7;
+}
+
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-background-color: #FFFFFF;
+}
+
+.tab-pane:focused > .tab-header-area > .headers-region > .tab:selected .focus-indicator {
+    -fx-border-color: #FFFFFF;
+}
+
+.card-background {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 10px;
+}
+
+.create-button {
+    -fx-background-color: #1098F7;
+    -fx-border-color: #1098F7;
+    -fx-text-fill: #ffffff;
+    -fx-border-radius: 5px;
+}
+
+.create-dialog {
+    -fx-background-radius: 10px;
+    -fx-background-color: #ffffff;
+}
+
+.text-field {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 4px;
+    -fx-border-color: #9e9e9e;
+    -fx-border-width: 1px;
+    -fx-border-radius: 4px;
+    -fx-padding: 6px 8px;
+    -fx-font-size: 14px;
+}
+
+.text-field:focused {
+    -fx-border-color: #1098F7;
+    -fx-border-width: 2px;
+}
+
+.add-button {
+    -fx-background-color: #1098F7;
+    -fx-border-color: #1098F7;
+    -fx-text-fill: #ffffff;
+    -fx-border-radius: 5px;
+}
+
+.cancel-button {
+    -fx-background-color : #FFFFFF;
+    -fx-border-color: #1098F7;
+    -fx-text-fill:  #1098F7;
+    -fx-border-radius: 5px;
+    -fx-border-width: 2px;
+}
+
+.list-cell {
+    -fx-alignment: center-left;
+    -fx-font-size: 12px;
+    -fx-padding: 8px;
+    -fx-background-color: transparent;
+}
+
+.list-cell:odd {
+    -fx-background-color: #f2f2f2;
+}
+
+.list-cell:even {
+    -fx-background-color: derive(#fafafa, 20%);
+}
+
+.list-cell:hover {
+    -fx-background-color: derive(#fafafa, 10%);
+}
+
+.list-cell:selected {
+    -fx-background-color: #1098F7;
+    -fx-text-fill: white;
+}
+
+.scroll-bar {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:vertical .thumb {
+    -fx-background-color: #1098F7;
+}
+
+.scroll-bar:horizontal .thumb {
+    -fx-background-color: #1098F7;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: #f44336;
+}
+
+.choice-box .arrow-button {
+    -fx-background-color: #fafafa;
+    -fx-padding: 4px;
+}
+
+.choice-box .arrow-button:hover {
+    -fx-background-color: derive(#fafafa, -10%);
+}
+
+.choice-box .arrow {
+    -fx-background-color: #1098F7;
+}
+
+.choice-box .menu-button .popup .menu-item {
+    -fx-padding: 8px 16px;
+    -fx-font-size: 14px;
+}
+
+.choice-box .menu-button .popup .menu-item:hover {
+    -fx-background-color: derive(#fafafa, -10%);
+}
+
+.choice-box .menu-button .popup .menu-item:selected {
+    -fx-background-color: #1098F7;
+    -fx-text-fill: white;
+}
+
+
+
+

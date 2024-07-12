@@ -4,6 +4,8 @@ plugins {
 	id 'io.spring.dependency-management' version '1.1.5'
 
 	id 'org.jetbrains.kotlin.jvm' version '1.6.0'
+
+	id 'org.openjfx.javafxplugin' version '0.0.14'
 }
 
 group = 'com.niiad'
@@ -21,6 +23,11 @@ repositories {
 
 ext {
 	set('kotlinVersion', '1.6.0')
+}
+
+javafx {
+	version = "21"
+	modules = [ 'javafx.controls', 'javafx.fxml' ]
 }
 
 dependencies {
